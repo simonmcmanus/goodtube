@@ -29,13 +29,13 @@ var ytvb = {};
  * maximum number of results to return for list of videos
  * @type Number
  */
-ytvb.MAX_RESULTS_LIST = 15;
+ytvb.MAX_RESULTS_LIST = 4;
 
 /**
  * maximum number of results to return for related videos
  * @type Number
  */
-ytvb.MAX_RESULTS_RELATED = 5;
+ytvb.MAX_RESULTS_RELATED = 2;
 
 /**
  * maximum number of results to return for videos by same
@@ -593,9 +593,8 @@ ytvb.playVideo = function(entryIndex, referringFeed) {
 var vidId = entry.id.$t.replace("http://gdata.youtube.com/feeds/videos/", "");
 playlistAdd(vidId);
 
-html.push('hello <div id="playerHolder"></div>');
-   html.push(videoHref);
-
+html.push('<div id="playerHolder"></div>');
+  
 
 videoPlayerDiv.innerHTML = html.join('');
 
@@ -812,8 +811,6 @@ function clearVideo() {
   }
 }
 
-
-
 /*  PLAYLIST FUNCTIONS */
 
 
@@ -834,16 +831,13 @@ function playlistPresent(p) {
 	if(p!=undefined) {
 		var items = p.split('\n');
 		var html = [];
-	//html.push('<ul id="sortable">');
 		for(i = 0; i < items.length; i++){
 			if(items[i]!=="") {
 				var img = "http://i.ytimg.com/vi/"+items[i]+"/2.jpg";
 				html.push('<li class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i]+'" width="90"/></li>');
 			}
 		}
-	//	html.push('</ul>');
-		return html.join("");
-		
+		return html.join("");		
 	}	
 }
 
