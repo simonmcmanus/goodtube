@@ -27,14 +27,13 @@
 	$(function() {
 		$("#sortable").sortable({
 			helper: 'original',
-			change: function(event, ui) {
-			var playlist = [];
-			$(".playlistItem").each(function() {
-				console.log(this);
-					playlist.push(this.id);
-			});
-		//	window.playlist = playlist.join("\n");
-			window.playlist = playlist.join("\n");
+			update: function(event, ui) {
+				var p = [];
+				$(this).children().each(function() {
+					if(this.firstChild!=undefined)
+						p.push(this.firstChild.id);
+				});
+				window.playlist = p.join("\n");
 		}});
 		$("#sortable").disableSelection();
 	});
@@ -120,7 +119,7 @@
 	      // this sets the id of the object or embed tag to 'myytplayer'.
 	      // You then use this id to access the swf and make calls to the player's API
 	      var atts = { id: "myytplayer" ,allowFullScreen: "true"};
-	    swfobject.embedSWF("http://www.youtube.com/v/ma9I9VBKPiw&amp;border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer",
+	    swfobject.embedSWF("http://www.youtube.com/v/ma9I9VBKPiw&amp;border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;fs=1",
 		                         "ytapiplayer", "425", "344", "8", null, null, params, atts);
 		 //]]>
 	    </script>
@@ -174,7 +173,9 @@
 <br clear="all" />
 
 <div class="strip">
+	<h1>Your Playlist</h1>
 <ul id="sortable">
+	<li> <span>currently empty</span> </li>
 </ul>
 </div>
 

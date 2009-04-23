@@ -832,7 +832,7 @@ function playlistPresent(p) {
 		var items = p.split('\n');
 		var html = [];
 		for(i = 0; i < items.length; i++){
-			if(items[i]!=="") {
+			if(items[i]!=="" && items[i]!==undefined) {
 				var img = "http://i.ytimg.com/vi/"+items[i]+"/2.jpg";
 				html.push('<li class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i]+'" width="90"/></li>');
 			}
@@ -844,12 +844,15 @@ function playlistPresent(p) {
 function playlistAdd(id) {
 	if(window.playlist!=undefined) {
 		window.playlist += id+"\n";
+		updatePlaylist(window.playlist);
+		
 	} else {
 		if(ytplayer.getPlayerState()==1) {
-				window.playlist = id+"\n";			
+				window.playlist = id+"\n";	
+				updatePlaylist(window.playlist);
+						
 		}else{
 			loadNewVideo(id);
 		}
 	}
-	updatePlaylist(window.playlist);
 }
