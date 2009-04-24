@@ -827,14 +827,28 @@ function updatePlaylist(p) {
 	document.getElementById("sortable").innerHTML = playlistPresent(p);		
 }
 
+
+
+function playlistDelete(position) {
+	var temp = window.playlist.split('\n');
+	temp.splice(position, 1);
+	window.playlist = temp.join('\n');
+	updatePlaylist(window.playlist);
+}
+
+function playlistPlay(id) {
+	loadNewVideo(id.id);
+}
+
 function playlistPresent(p) {
+	console.log("here2 ");
 	if(p!=undefined) {
 		var items = p.split('\n');
 		var html = [];
 		for(i = 0; i < items.length; i++){
 			if(items[i]!=="" && items[i]!==undefined) {
 				var img = "http://i.ytimg.com/vi/"+items[i]+"/2.jpg";
-				html.push('<li class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i]+'" width="90"/></li>');
+				html.push('<li class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i]+'" width="90"/><a href="#"  onclick="playlistPlay('+items[i]+');">play</a><br /><a href="#" onclick="playlistDelete('+i+')">del</a></li>');
 			}
 		}
 		return html.join("");		
