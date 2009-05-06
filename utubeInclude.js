@@ -845,8 +845,8 @@ parseURI = function(uri) {
 
 function playlistNext() {
 	loadNewVideo(window.jp[0].id);
+	$("#sortable > #"+0).fadeOut("fast");
 	window.jp.shift();
-	updatePlaylist(window.jp);
 }
 
 function updatePlaylist(p) {
@@ -894,7 +894,7 @@ function playlistAdd(id) {
 	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3) {
 		if(window.jp == undefined)
 			window.jp = [];	
-		window.jp[jp.length] = {'id':id};
+		window.jp[jp.length] = {'id':id };
 		updatePlaylist(window.jp);		
 	}else{
 		loadNewVideo(id);

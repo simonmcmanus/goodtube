@@ -126,7 +126,7 @@ p.videoDescription {
 	height:160px;
 	margin:5px 0 17px 153px;
 	padding:5px 10px 10px;
-	width:77.6%;
+	width:76.4%;
 }
 
 #titleText {
@@ -199,21 +199,23 @@ body {
 	
 	
 	#sortable { list-style-type: none; margin: 0; padding: 0;  }
-	#sortable li { margin: 3px 3px 3px 0; padding: 1px; width: 100px; height: 90px; font-size: 4em; text-align: center; 
+	#sortable li { margin: 3px 3px 3px 0; padding: 1px; width: 100px; height: 90px; color:#fff;  text-align: center; 
 	
 		background:#111;
 		}
 
 	#ui-sortable {background-color:red;}
 	
-	
+	#emptyPlaylist {
+		font-size:0.3em;
+	}
 	
 	#sortable li {
 		float:left;
 		font-size:4em;
 		height:67px;
 		margin:3px 3px 3px 0;
-		padding:0em 0.4em 0px 0px;
+		padding:5px 20px 0px 0px;
 		border:0px;
 		text-align:center;
 		width:100px;

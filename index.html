@@ -62,7 +62,7 @@
 	<div class='playlistColumn'>
 		<div class="strip">
 		<ul id="sortable">
-			<li>  </li>
+			<li><div id="emptyPlaylist"> Playlist is empty</div> </li>
 		</ul>
 		</div>
 
@@ -182,18 +182,19 @@
 	
       <div id="searchResultsVideoList">
 			<p>
-			GoodTube.me is a u-tube playlist generator. 
+			Use the above search box to find videos. When you have started watching a video all other videos you select will be added to your playlist.</p>
 			</p>
 			<p>
-			Use the above search box to find videos you wish to watch. When you have started watching a video all other videos you select will be added to your playlist.</p>
-			<p>
-				Its currently not possible to save and share playlists.<strong></strong>
+				If you don't want to search, why not try a playlist I made earlier : 
+			<ul>
+				
+				<li><a href="#" onclick='getPlaylist("puppies");'>Puppies </a></li>
+				<li><a href="#" onclick='getPlaylist("most_watched");'>Most Watched </a></li>
+			</ul>
 			</p>
 			<p>
 				This service is being built by <a href='http://simonmcmanus.com'>Simon McManus</a>
-				
-				
-				<a href="#" onclick='getPlaylist("funny");'>play funny </a>
+			
 			</p>
       </div>
       <div id="searchResultsNavigation">
