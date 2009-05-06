@@ -69,6 +69,27 @@
 	</div>
 	<div id="topBar">
 	
+
+	</div>
+  <div id="titleBar">
+	<h1>GoodTube.me</h1><br/><br/><br/><br/>
+
+    <div id="searchBox" >
+      <form id="searchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); return false;">
+        <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
+          <option value="all" selected="true">All Videos</option>
+          <option value="top_rated">Top Rated Videos</option>
+          <option value="most_viewed">Most Viewed Videos</option>
+          <option value="recently_featured">Recently Featured Videos</option>
+
+        </select>
+        <input name="searchTerm" type="text" value="puppy">
+        <input type="submit" value="Search">
+      </form>
+
+
+    </div>
+
 	<!--
 
 	START JS PLAYER
@@ -88,7 +109,7 @@
 	      // You then use this id to access the swf and make calls to the player's API
 	      var atts = { id: "myytplayer" ,allowFullScreen: "true"};
 	    swfobject.embedSWF("http://www.youtube.com/v/ma9I9VBKPiw&amp;border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;fs=1",
-		                         "ytapiplayer", "425", "344", "8", null, null, params, atts);
+		                         "ytapiplayer", "225", "164", "8", null, null, params, atts);
 		 //]]>
 	    </script>
 
@@ -102,7 +123,7 @@
 	<div style='display:none'>
 	      <a href="javascript:void(0);" onclick="play();">Play</a> | <a href="javascript:void(0);" onclick="pause();">Pause</a> | <a href="javascript:void(0);" onclick="stop();">Stop</a> | <a href="javascript:void(0);" onclick="mute();">Mute</a> | <a href="javascript:void(0);" onclick="unMute();">Unmute</a>
 	</div>
-	    
+
 
 	    <br />
 	    <div style='display:none'>
@@ -129,25 +150,7 @@
 
 	END JS PLAYER
 
-	-->	
-	</div>
-  <div id="titleBar">
-	
-    <div id="titleText"><h1>GoodTube.me</h1></div>
-
-    <div id="searchBox" style="display: none;">
-      <form id="searchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); return false;">
-        <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
-          <option value="all" selected="true">All Videos</option>
-          <option value="top_rated">Top Rated Videos</option>
-          <option value="most_viewed">Most Viewed Videos</option>
-          <option value="recently_featured">Recently Featured Videos</option>
-
-        </select>
-        <input name="searchTerm" type="text" value="puppy">
-        <input type="submit" value="Search">
-      </form>
-    </div>
+	-->
     <br />
   </div>
   <br clear="all" />
@@ -165,6 +168,9 @@
       <input name="searchTerm" type="text" value="puppy">
       <input type="submit" value="Search">
     </form>
+  <table id="searchResultsVideoListTable">
+  </table>
+
   </div>
 
 
@@ -189,8 +195,6 @@
 				
 				<a href="#" onclick='getPlaylist("funny");'>play funny </a>
 			</p>
-        <table id="searchResultsVideoListTable">
-        </table>
       </div>
       <div id="searchResultsNavigation">
         <form id="navigationForm">
@@ -203,9 +207,9 @@
     <div id="searchResultsVideoColumn" >
 
 
-      <div id="videoPlayer"></div>
-      <div   id="relatedVideos"></div>
-      <div  id="userVideos"></div>
+      <div  style='display:none' id="videoPlayer"></div>
+      <div  style='display:none' id="relatedVideos"></div>
+      <div  style='display:none' id="userVideos"></div>
     </div> 
   </div>
 </div>
