@@ -149,7 +149,7 @@ p.videoDescription {
 
 #searchResults {
 	background-color:#FFFFFF;
-	border:1px solid silver;
+	border:1px solid #111;
 	font-size:large;
 	font-weight:bold;
 	margin-left:8.5em;
@@ -177,6 +177,7 @@ p.videoDescription {
 	
 .playlistColumn {
 	float: left;
+	background:url(strip.png);
 	border:1px solid #111;
 	width: 122px;
 	position:relative;
