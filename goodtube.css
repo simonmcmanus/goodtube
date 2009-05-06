@@ -103,13 +103,13 @@ p.videoDescription {
   padding-bottom: 5px; 
   padding-right: 5px; 
 }
-
 #titleBar {
-	background-color:#fff;
-	border:1px solid silver;
+	background-color:#444;
+	color:#fff;
+	border:1px solid #555;
 	font-size:large;
 	font-weight:bold;
-	margin:5px 0 15px;
+	margin:5px 0 17px 141px;
 	padding:5px 10px 10px;
 }
 
@@ -119,6 +119,7 @@ p.videoDescription {
 
 #searchBox {
   float: right;
+
 }
 
 #mainSearchBox {
@@ -132,27 +133,46 @@ p.videoDescription {
 }
 
 #searchResults {
-  width: 100%;
+	background-color:white;
+	left:166px;
+	padding:2em;
+	width:71%;
+	position:absolute;
+	background-color:#FFFFFF;
+	border:1px solid silver;
+	font-size:large;
+	font-weight:bold;
+	margin:5px 0 15px;
+	padding:5px 10px 10px;
+	top:26em;
 }
 
 #searchResultsListColumn {
-  float: left;
-  width: 47%;
+	float: left;
+	width: 35%;
+	padding:0.5em;
+	background-color:white;
 }
 
 #searchResultsVideoColumn {
-  float: right;
-  width: 47%;
+	float: right;
+	background-color:white;
 }
-
-
-
-
-
+	
+.playlistColumn {
+	float: left;
+	width: 122px;
+	top:-7em;
+	position:relative;
+	background-color: #444;
+  	padding-top: 0px;
+  	padding-bottom: 5px;
+  	padding-left: 10px;
+  	padding-right: 10px;
+}
 
 body {
   font-family: verdana, helvetica;
-  background-color:#E5ECF9 ;
 }
 
 #timedisplay {
@@ -160,18 +180,9 @@ body {
   width: 50px;
 }
 	
-	.strip {
-  background-color: #fff;
-  border: 1px solid silver;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-position:absolute;
-	}
 	
 	#sortable { list-style-type: none; margin: 0; padding: 0;  }
-	#sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+	#sortable li { margin: 3px 3px 3px 0; padding: 1px; width: 100px; height: 90px; font-size: 4em; text-align: center; }
 
 	#ui-sortable {background-color:red;}
 	
@@ -185,11 +196,23 @@ position:absolute;
 	padding:0.1em 1px 1px;
 	text-align:center;
 	width:100px;
+	padding-right:0.4em;
 	}
 	
-	 .deleteHelper {
+	 .helper {
 		background-color:red;
 		border:2px dashed #red;
 		color:#333;
 	}
 	
+.playlistDelete {
+	left:1.1em;
+	position:relative;
+	top:-2.5em;
+}
+
+.playlistPlay {
+	left:1.1em;
+	position:relative;
+	top:-0.6em;
+}

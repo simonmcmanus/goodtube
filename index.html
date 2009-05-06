@@ -24,9 +24,11 @@
 	<script type="text/javascript" src="http://jqueryui.com/ui/ui.core.js"></script>
 	<script type="text/javascript" src="http://jqueryui.com/ui/ui.sortable.js"></script>
 	<script type="text/javascript">
+	
+	
 	$(function() {
 		$("#sortable").sortable({
-			helper: 'original',
+			helper: 'clone',
 			update: function(event, ui) {
 				var p = [];
 				$(this).children().each(function() {
@@ -37,69 +39,35 @@
 		}});
 		$("#sortable").disableSelection();
 	});
+	
+	
+	$(document).ready(function(){
+		document.getElementById(ytvb.MAIN_SEARCH_CONTAINER_DIV).style.display = 'none';
+	  document.getElementById(ytvb.TOP_SEARCH_CONTAINER_DIV).style.display = 'inline';
+
+
+ });
+
+
 	</script>
+	
+	
 </head>
 <body>
 	
 
 
-
 <div id="main">
-  <div id="titleBar">
-    <div id="titleText"><h1>GoodTube Playlist Creator</h1></div>
 
-    <div id="searchBox" style="display: none;">
-      <form id="searchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); return false;">
-        <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
-          <option value="all" selected="true">All Videos</option>
-          <option value="top_rated">Top Rated Videos</option>
-          <option value="most_viewed">Most Viewed Videos</option>
-          <option value="recently_featured">Recently Featured Videos</option>
+	<div class='playlistColumn'>
+		<div class="strip">
+		<ul id="sortable">
+			<li>  </li>
+		</ul>
+		</div>
 
-        </select>
-        <input name="searchTerm" type="text" value="puppy">
-        <input type="submit" value="Search">
-      </form>
-    </div>
-    <br />
-  </div>
-  <br clear="all" />
-  <div id="mainSearchBox">
-
-    <h2>Search YouTube:</h2>
-    <form id="mainSearchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); document.forms.searchForm.searchTerm.value=this.searchTerm.value; ytvb.hideMainSearch(); document.forms.searchForm.queryType.selectedIndex=this.queryType.selectedIndex; return false;">
-      <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
-        <option value="all" selected="true">All Videos</option>
-        <option value="top_rated">Top Rated Videos</option>
-        <option value="most_viewed">Most Viewed Videos</option>
-        <option value="recently_featured">Recently Featured Videos</option>
-
-      </select>
-      <input name="searchTerm" type="text" value="puppy">
-      <input type="submit" value="Search">
-    </form>
-  </div>
-
-
-
-  <br clear="all" />
-  <div id="searchResults">
-    <div id="searchResultsListColumn">
-      <div id="searchResultsVideoList">
-
-        <table id="searchResultsVideoListTable">
-        </table>
-      </div>
-      <div id="searchResultsNavigation">
-        <form id="navigationForm">
-          <input type="button" id="previousPageButton" onclick="ytvb.listVideos(ytvb.previousQueryType, ytvb.previousSearchTerm, ytvb.previousPage);" value="Back" style="display: none;"></input>
-          <input type="button" id="nextPageButton" onclick="ytvb.listVideos(ytvb.previousQueryType, ytvb.previousSearchTerm, ytvb.nextPage);" value="Next" style="display: none;"></input>
-        </form>
-      </div>
-
-    </div>
-    <div id="searchResultsVideoColumn">
-	
+	</div>
+	<div id="topBar">
 	
 	<!--
 
@@ -161,23 +129,89 @@
 
 	END JS PLAYER
 
-	-->
+	-->	
+	</div>
+  <div id="titleBar">
+	
+    <div id="titleText"><h1>GoodTube.me</h1></div>
+
+    <div id="searchBox" style="display: none;">
+      <form id="searchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); return false;">
+        <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
+          <option value="all" selected="true">All Videos</option>
+          <option value="top_rated">Top Rated Videos</option>
+          <option value="most_viewed">Most Viewed Videos</option>
+          <option value="recently_featured">Recently Featured Videos</option>
+
+        </select>
+        <input name="searchTerm" type="text" value="puppy">
+        <input type="submit" value="Search">
+      </form>
+    </div>
+    <br />
+  </div>
+  <br clear="all" />
+  <div id="mainSearchBox">
+
+    <h2>Search YouTube:</h2>
+    <form id="mainSearchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); document.forms.searchForm.searchTerm.value=this.searchTerm.value; ytvb.hideMainSearch(); document.forms.searchForm.queryType.selectedIndex=this.queryType.selectedIndex; return false;">
+      <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
+        <option value="all" selected="true">All Videos</option>
+        <option value="top_rated">Top Rated Videos</option>
+        <option value="most_viewed">Most Viewed Videos</option>
+        <option value="recently_featured">Recently Featured Videos</option>
+
+      </select>
+      <input name="searchTerm" type="text" value="puppy">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+
+
+
+  <br clear="all" />
+
+  <div id="searchResults">
+    <div id="searchResultsListColumn">
+	
+      <div id="searchResultsVideoList">
+			<p>
+			GoodTube.me is a u-tube playlist generator. 
+			</p>
+			<p>
+			Use the above search box to find videos you wish to watch. When you have started watching a video all other videos you select will be added to your playlist.</p>
+			<p>
+				Its currently not possible to save and share playlists.<strong></strong>
+			</p>
+			<p>
+				This service is being built by <a href='http://simonmcmanus.com'>Simon McManus</a>
+				
+				
+				<a href="#" onclick='getPlaylist("funny");'>play funny </a>
+			</p>
+        <table id="searchResultsVideoListTable">
+        </table>
+      </div>
+      <div id="searchResultsNavigation">
+        <form id="navigationForm">
+          <input type="button" id="previousPageButton" onclick="ytvb.listVideos(ytvb.previousQueryType, ytvb.previousSearchTerm, ytvb.previousPage);" value="Back" style="display: none;"></input>
+          <input type="button" id="nextPageButton" onclick="ytvb.listVideos(ytvb.previousQueryType, ytvb.previousSearchTerm, ytvb.nextPage);" value="Next" style="display: none;"></input>
+        </form>
+      </div>
+
+    </div>
+    <div id="searchResultsVideoColumn" >
+
 
       <div id="videoPlayer"></div>
-      <div  style='display:none' id="relatedVideos"></div>
-      <div style='display:none' id="userVideos"></div>
+      <div   id="relatedVideos"></div>
+      <div  id="userVideos"></div>
     </div> 
   </div>
 </div>
 <br clear="all" />
 <br clear="all" />
 
-<div class="strip">
-	<h1>Your Playlist</h1>
-<ul id="sortable">
-	<li> <span>currently empty</span> </li>
-</ul>
-</div>
 
 
 </body>
