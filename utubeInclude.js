@@ -781,6 +781,39 @@ function clearVideo() {
 /*   Override functions */
 
 
+ytvb.listVideosCallback = function(data) {
+  // Stores the json data returned for later lookup by entry index value
+  ytvb.jsonFeed_ = data.feed;
+  var resultsTableContainer = document.getElementById(
+      ytvb.VIDEO_LIST_TABLE_CONTAINER_DIV);
+
+  // Deletes and re-adds the results table from container
+  // NOTE: Any other elements added to the container will also be cleared
+  while (resultsTableContainer.childNodes.length >= 1) {
+    resultsTableContainer.removeChild(resultsTableContainer.firstChild);
+  }
+
+  var resultsTable = document.createElement('table');
+  resultsTable.setAttribute('class', ytvb.VIDEO_LIST_CSS_CLASS);
+  var tbody = document.createElement('tbody');
+  resultsTable.setAttribute('width', '100%');
+  resultsTableContainer.appendChild(resultsTable);
+
+  // Loops through entries in the feed and calls appendVideoData for each
+  for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+    if (! entry.yt$noembed) {
+      	ytvb.appendVideoDataToTable(tbody, entry, i);
+		var id = parseURI(entry.id.$t);
+		if(window.autoQ)
+			playlistAdd(id);
+    }
+  }
+  resultsTable.appendChild(tbody);
+};
+
+
+
+
 ytvb.showRelatedVideosCallback = function(data) {
   var relatedVideosDiv = document.getElementById(ytvb.RELATED_VIDEOS_DIV);
   ytvb.jsonFeedRelated_ = data.feed;
@@ -793,9 +826,9 @@ ytvb.showRelatedVideosCallback = function(data) {
     img.setAttribute('width', ytvb.THUMBNAIL_WIDTH);
     img.setAttribute('height', ytvb.THUMBNAIL_HEIGHT);
     relatedVideosDiv.appendChild(img);
-	
-var id = parseURI(entry.id.$t);
-//playlistAdd(id);
+	var id = parseURI(entry.id.$t);
+	if(window.autoQ)
+		playlistAdd(id);
 
   }
 };
@@ -899,4 +932,12 @@ function playlistAdd(id) {
 	}else{
 		loadNewVideo(id);
 	}
+}
+
+
+
+//  AutoQ functions 
+
+function setAutoQ(checkbox) {
+	window.autoQ = checkbox.checked;
 }
