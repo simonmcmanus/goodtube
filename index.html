@@ -73,9 +73,11 @@
 
 	</div>
   <div id="titleBar">
-	<h1>GoodTube.me</h1><br/><br/><br/><br/>
+	<h1>GoodTube.me</h1><br/><br/><br/><br/><br/>
 
     <div id="searchBox" >
+	    <input type='checkbox'  checked='false' id='autoQ' onclick='setAutoQ(this)'/>Auto Add
+    <br/>
       <form id="searchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); return false;">
         <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
           <option value="all" selected="true">All Videos</option>
@@ -84,7 +86,6 @@
           <option value="recently_featured">Recently Featured Videos</option>
 		
         </select>
-        <input type='checkbox'  checked='false' id='autoQ' onclick='setAutoQ(this)'/>Auto Add to playlist
 		<input name="searchTerm" type="text" value="puppy">
         <input type="submit" value="Search">
       </form>

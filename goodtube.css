@@ -101,7 +101,7 @@ p.videoDescription {
 
 #myytplayer {
 	position:relative;
-	top:-8.6em;
+	top:-12.4em;
 	float:right;
 
 }
@@ -121,7 +121,6 @@ p.videoDescription {
 	*/
 	border:0.2em solid black;
 	color:#555;
-	font-size:large;
 	font-weight:bold;
 	height:160px;
 	margin:5px 0 17px 153px;
