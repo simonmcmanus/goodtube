@@ -53,8 +53,11 @@
 		window.autoQ = document.getElementById("autoQ").checked;
 		document.getElementById(ytvb.MAIN_SEARCH_CONTAINER_DIV).style.display = 'none';
 		document.getElementById(ytvb.TOP_SEARCH_CONTAINER_DIV).style.display = 'inline';
+		$("#resultsNumberSliderResult").html(ytvb.MAX_RESULTS_LIST);
 		$("#resultsNumberSlider").slider({ 
 			max: 50,
+			min:1, 
+			value:ytvb.MAX_RESULTS_LIST,
 			stop: function(e, s) {
 			ytvb.MAX_RESULTS_LIST = s.value;
 			$("#resultsNumberSliderResult").html(s.value);
@@ -223,7 +226,6 @@
 			</div>	
       <div id="searchResultsVideoList">
 			<p>
-				
 			GoodTube.me lets you create <b>playslists</b> from youtube videos. 
 			<p/>
 			<p>
@@ -241,6 +243,9 @@
 				This service is being built by <a href='http://simonmcmanus.com'>Simon McManus</a> It's all just javascript so you can see what's going on with view source. Ive also create a <a href='http://github.com'>github</a> project with the latest code <a href='http://github.com/simonmcmanus/goodtube/tree/master'>here</a>. 
 			
 			</p>
+			
+			<a href='#' onclick='playChannel()'>TiddlyWiki TV</a>
+			
       </div>
       <div id="searchResultsNavigation">
         <form id="navigationForm">

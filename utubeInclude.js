@@ -171,11 +171,8 @@ ytvb.VIDEO_FEED_URL =
     'http://gdata.youtube.com/feeds/videos';
 
 
-	/** 
-	 * the URL to use for the standard YouTube news feed
-	 * @type String
-	 */					
-	ytvb.NEWS_FEED_URL =  'http://gdata.youtube.com/feeds/base/standardfeeds/GB/most_viewed?time=today';
+ytvb.NEWS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/tiddlywiki';
+ytvb.TIDDLYWIKI_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/tiddlywiki';
 	
 /**
  * map of URLs used for the different types of feeds to query
@@ -186,7 +183,8 @@ ytvb.QUERY_URL_MAP = {
   'most_viewed' : ytvb.STANDARD_FEED_URL_MOST_VIEWED,
   'recently_featured' : ytvb.STANDARD_FEED_URL_RECENTLY_FEATURED,
   'all' : ytvb.VIDEO_FEED_URL,
-  'news' : ytvb.NEWS_FEED_URL
+  'news' : ytvb.NEWS_FEED_URL,
+ 'tiddlywiki' : ytvb.TIDDLYWIKI_FEED_URL
 };
 
 /**
@@ -348,11 +346,9 @@ ytvb.findMediaContentHref = function(entry, type) {
  * @param {Number} page The 1-based page of results to return.
  */
 ytvb.listVideos = function(queryType, searchTerm, page) {
-console.log("here", queryType);
 
   ytvb.previousSearchTerm = searchTerm; 
   ytvb.previousQueryType = queryType;
-console.log(ytvb.QUERY_URL_MAP); 
   var queryUrl = ytvb.QUERY_URL_MAP[queryType];
   if (queryUrl) {
     queryUrl += '?max-results=' + ytvb.MAX_RESULTS_LIST +
@@ -819,7 +815,7 @@ ytvb.listVideosCallback = function(data) {
 			playlistAdd(id);
     }
   }
-  resultsTable.appendChild(tbody);
+//  resultsTable.appendChild(tbody);
 };
 
 
@@ -956,10 +952,17 @@ function setAutoQ(checkbox) {
 
 
 function settingsClick() {
+	if($("#settings").css('display') == 'none' )
+		$("#settings").show("drop", { direction: "up" }, 400);
+	else
+		$("#settings").hide("drop", { direction: "up" }, 200);
+}
 
 
-if($("#settings").css('display') == 'none' )
-	$("#settings").show("drop", { direction: "up" }, 400);
-else
-	$("#settings").hide("drop", { direction: "up" }, 200);
+
+//  TV CHANNEL FUNCTIONS 
+
+
+function playChannel(feed) {
+	ytvb.listVideos("tiddlywiki", "", 1);
 }
