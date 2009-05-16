@@ -178,6 +178,11 @@ ytvb.TIDDLYWIKI_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/tiddlyw
 ytvb.COMEDY_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/Comedy';
 
 ytvb.POLITICS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/politics';
+
+
+ytvb.MUSIC_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/music';
+
+ytvb.WILDLIFE_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/wildlife';
 	
 /**
  * map of URLs used for the different types of feeds to query
@@ -191,7 +196,9 @@ ytvb.QUERY_URL_MAP = {
   'news' : ytvb.NEWS_FEED_URL,
   'comedy' : ytvb.COMEDY_FEED_URL,
   'politics' : ytvb.POLITICS_FEED_URL,
- 'tiddlywiki' : ytvb.TIDDLYWIKI_FEED_URL
+  'music' : ytvb.MUSIC_FEED_URL,
+ 'tiddlywiki' : ytvb.TIDDLYWIKI_FEED_URL,
+ 'wildlife' : ytvb.WILDLIFE_FEED_URL
 };
 
 /**
