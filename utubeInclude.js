@@ -172,7 +172,12 @@ ytvb.VIDEO_FEED_URL =
 
 
 ytvb.NEWS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/tiddlywiki';
+
 ytvb.TIDDLYWIKI_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/tiddlywiki';
+
+ytvb.COMEDY_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/Comedy';
+
+ytvb.POLITICS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/politics';
 	
 /**
  * map of URLs used for the different types of feeds to query
@@ -184,6 +189,8 @@ ytvb.QUERY_URL_MAP = {
   'recently_featured' : ytvb.STANDARD_FEED_URL_RECENTLY_FEATURED,
   'all' : ytvb.VIDEO_FEED_URL,
   'news' : ytvb.NEWS_FEED_URL,
+  'comedy' : ytvb.COMEDY_FEED_URL,
+  'politics' : ytvb.POLITICS_FEED_URL,
  'tiddlywiki' : ytvb.TIDDLYWIKI_FEED_URL
 };
 
@@ -345,7 +352,7 @@ ytvb.findMediaContentHref = function(entry, type) {
  *     'vq' query parameter value
  * @param {Number} page The 1-based page of results to return.
  */
-ytvb.listVideos = function(queryType, searchTerm, page) {
+ytvb.listVideos = function(queryType, searchTerm, page, displayResults) {
 
   ytvb.previousSearchTerm = searchTerm; 
   ytvb.previousQueryType = queryType;
@@ -796,10 +803,12 @@ ytvb.listVideosCallback = function(data) {
 
   // Deletes and re-adds the results table from container
   // NOTE: Any other elements added to the container will also be cleared
-  while (resultsTableContainer.childNodes.length >= 1) {
-    resultsTableContainer.removeChild(resultsTableContainer.firstChild);
-  }
-
+  	if(window.showResults != false)
+	{
+		while (resultsTableContainer.childNodes.length >= 1) {
+	    		resultsTableContainer.removeChild(resultsTableContainer.firstChild);
+	  }
+	}
   var resultsTable = document.createElement('table');
   resultsTable.setAttribute('class', ytvb.VIDEO_LIST_CSS_CLASS);
   var tbody = document.createElement('tbody');
@@ -809,13 +818,18 @@ ytvb.listVideosCallback = function(data) {
   // Loops through entries in the feed and calls appendVideoData for each
   for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
     if (! entry.yt$noembed) {
-      	ytvb.appendVideoDataToTable(tbody, entry, i);
+		if(window.showResults != false)
+      		ytvb.appendVideoDataToTable(tbody, entry, i);
 		var id = parseURI(entry.id.$t);
 		if(window.autoQ)
 			playlistAdd(id);
     }
   }
-//  resultsTable.appendChild(tbody);
+
+// used to stop channels showing in search results
+if(window.showResults != false)
+  resultsTable.appendChild(tbody);
+	window.showResults = true;
 };
 
 
@@ -964,5 +978,19 @@ function settingsClick() {
 
 
 function playChannel(feed) {
-	ytvb.listVideos("tiddlywiki", "", 1);
+	window.jp = [];
+	window.showResults = false;
+	ytvb.MAX_RESULTS_LIST = 50;
+	ytvb.listVideos(feed, "", 1);
+
+}
+
+
+function listChannels() {
+	var html = [];
+	for (var i in ytvb.QUERY_URL_MAP){
+		html.push('<div class="channelButton" onclick=playChannel("'+i+'");>'+i+'</div>');
+		
+	}
+	$("#channels").html(html.join("\n"));
 }

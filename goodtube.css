@@ -111,6 +111,8 @@ p.videoDescription {
   padding-right: 5px; 
 }
 #titleBar {
+	-moz-border-radius:8px;
+	
 	background-color:#444444;
  background: #fff url(http://www.marineemporiumlanding.com/images/Film%20strip%20with%20pics%20copy.jpg) no-repeat;
 /*	filter:alpha(opacity=90);
@@ -148,6 +150,7 @@ p.videoDescription {
 #searchResults {
 	background-color:#FFFFFF;
 	border:4px solid #111111;
+	-moz-border-radius:8px;
 	font-size:large;
 	font-weight:bold;
 	margin-left:8.5em;
@@ -163,7 +166,8 @@ p.videoDescription {
 	float: left;
 	padding:0.5em;
 	background-color:white;
-
+	margin-top:0.4em;
+	padding-top:0em;
 	top:-2em;
 	position:relative;
 	}
@@ -267,4 +271,20 @@ body {
 
 .videoList {
 	margin:0.3em;
+}
+
+.channelButton {
+	background-color:#eee;
+	display:inline;
+	padding:0.2em 0.6em;
+	margin:1em;
+	line-height:2.5em;
+	border:1px solid #111;
+}
+
+
+.channelButton:hover {
+	background:red;
+		cursor:pointer;
+		z-index:100;
 }

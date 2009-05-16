@@ -50,6 +50,7 @@
 	
 	
 	$(document).ready(function(){
+		
 		window.autoQ = document.getElementById("autoQ").checked;
 		document.getElementById(ytvb.MAIN_SEARCH_CONTAINER_DIV).style.display = 'none';
 		document.getElementById(ytvb.TOP_SEARCH_CONTAINER_DIV).style.display = 'inline';
@@ -62,7 +63,8 @@
 			ytvb.MAX_RESULTS_LIST = s.value;
 			$("#resultsNumberSliderResult").html(s.value);
 		} });
-
+		listChannels();
+		$("#channels").html()
 
  });
 
@@ -89,7 +91,7 @@
 	
 
   <div id="titleBar">
-	<h1>GoodTube.me</h1>
+	<h1>tolly.tv</h1>
 	
 	<br/>
 	<br/>
@@ -209,43 +211,22 @@
 
 	
 	    <div id="searchResultsListColumn">
-			<div class='settings' id="settingsButton"  onclick='settingsClick()'> settings </div>
-			<div class='settings' id='settings'>
-
-			    <div id="searchBox" >
-				    <input type='checkbox'  checked='false' id='autoQ' onclick='setAutoQ(this)'/>Auto Add
-			    <br/>
-				    <input type='checkbox'  checked='false' id='loop' onclick='setAutoQ(this)'/>Loop (When the playlist has been played it will start from the beginning again)
-			    <br/>
-				    <input type='checkbox'  checked='false' id='addRelated' onclick='setAutoQ(this)'/>Auto add related items to playlist.
-			    <br/>
-					<div id="resultsNumberSlider"></div><span id="resultsNumberSliderResult"> </span> results will be returned
-						<br/>
-
-				</div>
-			</div>	
+	
       <div id="searchResultsVideoList">
-			<p>
-			GoodTube.me lets you create <b>playslists</b> from youtube videos. 
-			<p/>
-			<p>
-			Use the above search box to find videos. When you have started watching a video all other videos you select will be added to your playlist.</p>
-			</p>
-			<p>
-				If you don't want to search, why not try a playlist I made earlier : 
-			<ul>
-				
-				<li><a href="#" onclick='getPlaylist("puppies");'>Puppies </a></li>
-				<li><a href="#" onclick='getPlaylist("most_watched");'>Most Watched </a></li>
+	
+	<h1>TV Channels</h1>
+			<div id='channels'></div>
 			</ul>
-			</p>
+			<!--
+				<h1>Playlists</h1>
+	
+		<li><a href="#" onclick='getPlaylist("puppies");'>Puppies </a></li>
+			<li><a href="#" onclick='getPlaylist("most_watched");'>Most Watched </a></li>
+			
+		-->
 			<p>
-				This service is being built by <a href='http://simonmcmanus.com'>Simon McManus</a> It's all just javascript so you can see what's going on with view source. Ive also create a <a href='http://github.com'>github</a> project with the latest code <a href='http://github.com/simonmcmanus/goodtube/tree/master'>here</a>. 
-			
+				This service is being built by <a href='http://simonmcmanus.com'>Simon McManus</a>. I've created a <a href='http://github.com'>github</a> project with the latest code <a href='http://github.com/simonmcmanus/goodtube/tree/master'>here</a>. 
 			</p>
-			
-			<a href='#' onclick='playChannel()'>TiddlyWiki TV</a>
-			
       </div>
       <div id="searchResultsNavigation">
         <form id="navigationForm">
@@ -261,8 +242,25 @@
       <div  style='display:none' id="videoPlayer"></div>
       <div  style='display:none' id="relatedVideos"></div>
       <div  style='display:none' id="userVideos"></div>
-    </div> 
+
+			<div class='settings' id="settingsButton"  onclick='settingsClick()'> settings </div>
+			<div class='settings' id='settings'>
+
+			    <div id="searchBox" >
+				    <input type='checkbox'  checked='false' id='autoQ' onclick='setAutoQ(this)'/>Auto Add
+			    <br/>
+				    <input type='checkbox'  checked='false' id='loop' onclick='setAutoQ(this)'/>Loop (When the playlist has been played it will start from the beginning again)
+			    <br/>
+				    <input type='checkbox'  checked='false' id='addRelated' onclick='setAutoQ(this)'/>Auto add related items to playlist.
+			    <br/>
+					<div id="resultsNumberSlider"></div><span id="resultsNumberSliderResult"> </span> results will be returned
+						<br/>
+
+				</div>
+			</div>    </div> 
+
   </div>
+
 </div>
 <br clear="all" />
 <br clear="all" />
