@@ -171,11 +171,11 @@ ytvb.VIDEO_FEED_URL =
     'http://gdata.youtube.com/feeds/videos';
 
 
-ytvb.NEWS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/tiddlywiki';
+ytvb.NEWS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/News';
 
 ytvb.TIDDLYWIKI_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/tiddlywiki';
 
-ytvb.COMEDY_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/Comedy';
+ytvb.COMEDY_FEED_URL =  'http://gdata.youtube.com/feeds/api/standardfeeds/GB/top_rated_Comedy';
 
 ytvb.POLITICS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/politics';
 
