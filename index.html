@@ -64,8 +64,6 @@
 			$("#resultsNumberSliderResult").html(s.value);
 		} });
 		listChannels();
-		$("#channels").html()
-
  });
 
 
@@ -215,18 +213,42 @@
       <div id="searchResultsVideoList">
 	
 	<h1>TV Channels</h1>
-			<div id='channels'></div>
-			</ul>
+		<div id='channels'>
+			<div id='channelsCol1' class='channelsCol'></div>
+			<div id='channelsCol2' class='channelsCol'></div>
+			<div id='channelsCol3' class='channelsCol'></div>
+			</div>
+			<br  clear='all'/>
+			
+			<div id='footer'>
+					<p>
+					Welcome to Tolly.tv.	This service is being built by <a href='http://simonmcmanus.com'>Simon McManus</a>. There is a <a href='http://github.com'>github</a> project with the latest code <a href='http://github.com/simonmcmanus/goodtube/tree/master'>here</a>. 
+					</p>
+						<div class='settings' id="settingsButton"  onclick='settingsClick()'> settings </div>
+						<div class='settings' id='settings'>
+
+						    <div id="searchBox" >
+							    <input type='checkbox'  checked='false' id='autoQ' onclick='setAutoQ(this)'/>Auto Add
+						    <br/>
+							    <input type='checkbox'  checked='false' id='loop' onclick='setAutoQ(this)'/>Loop (When the playlist has been played it will start from the beginning again)
+						    <br/>
+							    <input type='checkbox'  checked='false' id='addRelated' onclick='setAutoQ(this)'/>Auto add related items to playlist.
+						    <br/>
+								<div id="resultsNumberSlider"></div><span id="resultsNumberSliderResult"> </span> results will be returned
+									<br/>
+
+							</div>
+						</div>    </div>
+			
+			</div>
 			<!--
 				<h1>Playlists</h1>
 	
 		<li><a href="#" onclick='getPlaylist("puppies");'>Puppies </a></li>
 			<li><a href="#" onclick='getPlaylist("most_watched");'>Most Watched </a></li>
 			
-		-->
-			<p>
-				This service is being built by <a href='http://simonmcmanus.com'>Simon McManus</a>. I've created a <a href='http://github.com'>github</a> project with the latest code <a href='http://github.com/simonmcmanus/goodtube/tree/master'>here</a>. 
-			</p>
+		--><br />
+	
       </div>
       <div id="searchResultsNavigation">
         <form id="navigationForm">
@@ -243,29 +265,12 @@
       <div  style='display:none' id="relatedVideos"></div>
       <div  style='display:none' id="userVideos"></div>
 
-			<div class='settings' id="settingsButton"  onclick='settingsClick()'> settings </div>
-			<div class='settings' id='settings'>
-
-			    <div id="searchBox" >
-				    <input type='checkbox'  checked='false' id='autoQ' onclick='setAutoQ(this)'/>Auto Add
-			    <br/>
-				    <input type='checkbox'  checked='false' id='loop' onclick='setAutoQ(this)'/>Loop (When the playlist has been played it will start from the beginning again)
-			    <br/>
-				    <input type='checkbox'  checked='false' id='addRelated' onclick='setAutoQ(this)'/>Auto add related items to playlist.
-			    <br/>
-					<div id="resultsNumberSlider"></div><span id="resultsNumberSliderResult"> </span> results will be returned
-						<br/>
-
-				</div>
-			</div>    </div> 
+		
 
   </div>
 
 </div>
-<br clear="all" />
-<br clear="all" />
 
-
-
+	
 </body>
 </html>

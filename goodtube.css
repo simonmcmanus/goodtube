@@ -5,6 +5,7 @@ body {
   font-size: small;
   margin: 8px;
   margin-top: 3px;
+  overflow-x:hidden;
 }
 
 img {
@@ -249,7 +250,6 @@ body {
 .settings {
 	color:#333;
 	border:1px solid #999;
-	width:102%;
 	margin:0.4em;
 	padding:0.4em;
 	font-size:0.5em;
@@ -275,16 +275,39 @@ body {
 
 .channelButton {
 	background-color:#eee;
-	display:inline;
 	padding:0.2em 0.6em;
 	margin:1em;
 	line-height:2.5em;
+	min-height:33px;
 	border:1px solid #111;
+	background:transparent url(gradient.png) repeat scroll 0 0;
+	-moz-border-radius:3px;
 }
 
 
-.channelButton:hover {
+#channels {
+	background:url(http://www.productoftheyear.co.uk/images/tv.jpg) no-repeat;
+	width:114%;
+}
+
+.channelsCol {
+	float:left;
+	text-align:center;
+	min-width:30%;
+}
+
+
+
+div.channelButton:Hover {
+	background:url(gradient_hover.png) repeat scroll 0 0;
+	cursor:pointer;
+}
+
+div.channelButton:link {
 	background:red;
-		cursor:pointer;
-		z-index:100;
+	cursor:pointer;
+}
+
+.loadingImg {
+	display:none;
 }

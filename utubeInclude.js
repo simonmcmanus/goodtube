@@ -197,7 +197,6 @@ ytvb.QUERY_URL_MAP = {
   'comedy' : ytvb.COMEDY_FEED_URL,
   'politics' : ytvb.POLITICS_FEED_URL,
   'music' : ytvb.MUSIC_FEED_URL,
- 'tiddlywiki' : ytvb.TIDDLYWIKI_FEED_URL,
  'wildlife' : ytvb.WILDLIFE_FEED_URL
 };
 
@@ -810,11 +809,10 @@ ytvb.listVideosCallback = function(data) {
 
   // Deletes and re-adds the results table from container
   // NOTE: Any other elements added to the container will also be cleared
-  	if(window.showResults != false)
-	{
+  	if(window.showResults != false){
 		while (resultsTableContainer.childNodes.length >= 1) {
 	    		resultsTableContainer.removeChild(resultsTableContainer.firstChild);
-	  }
+	  		}
 	}
   var resultsTable = document.createElement('table');
   resultsTable.setAttribute('class', ytvb.VIDEO_LIST_CSS_CLASS);
@@ -989,15 +987,20 @@ function playChannel(feed) {
 	window.showResults = false;
 	ytvb.MAX_RESULTS_LIST = 50;
 	ytvb.listVideos(feed, "", 1);
+	$(".loadingImg").hide();	
+	$("#"+feed+"LoadingImg").show();
 
 }
 
 
 function listChannels() {
 	var html = [];
+	var count = 0;
 	for (var i in ytvb.QUERY_URL_MAP){
-		html.push('<div class="channelButton" onclick=playChannel("'+i+'");>'+i+'</div>');
+		if(count >=3)
+			count = 0;
+		count ++;
 		
+	$("#channelsCol"+count).html($("#channelsCol"+count).html()+'<div class="channelButton" id="'+i+'Button" onclick=playChannel("'+i+'");>'+i.replace("_", " ")+' <img height="20px"  class="loadingImg" id="'+i+'LoadingImg" src="ajax-loader.gif" /></div>');	
 	}
-	$("#channels").html(html.join("\n"));
 }
