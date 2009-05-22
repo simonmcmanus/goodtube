@@ -903,13 +903,21 @@ parseURI = function(uri) {
 }
 
 function playlistNext() {
+	if(window.jpPast == undefined)
+		window.jpPast = [];
 	loadNewVideo(window.jp[0].id);
-	$("#sortable > #"+0).fadeOut("fast");
+//	$("#sortable > #"+0).fadeOut("fast");
 	window.jp.shift();
+	jpPast.push({id:window.jp[0].id});
+	console.log(jpPast);
+	updatePlaylist();
+//$("#sortable > #"+0).prependTo('#pastPlaylist')
+	
 }
 
-function updatePlaylist(p) {
-	document.getElementById("sortable").innerHTML = playlistPresent(p);		
+function updatePlaylist() {
+	document.getElementById("sortable").innerHTML = playlistPresent(window.jp);		
+//	document.getElementById("pastPlaylist").innerHTML = playlistPresent(window.jpPast);		
 }
 
 function playlistDelete(position) {
@@ -929,11 +937,11 @@ function playlistPresent(p) {
 		for(i = 0; i < items.length; i++){
 			if(items[i]!=="" && items[i]!==undefined) {
 				var img = "http://i.ytimg.com/vi/"+items[i].id+"/2.jpg";
-				html.push('<li  id="'+i+'" class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i].id+'" width="90"/>');
+				html.push('<li  id="li'+i+'" class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i].id+'" width="90"/>');
 				html.push('<a href="#" class="playlistPlay"  onclick="playlistPlay(\''+items[i].id+'\');">');
 				html.push('<img src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png" height="20px"</a><br />');
 				html.push('<a href="#" class="playlistDelete" onclick="playlistDelete('+i+')"><img src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png" height="20px">');
-				html.push('</a></li>');
+				html.push('</a><div class="playlistItemInfo">ah</div></li>');
 			}
 		}
 		return html.join("");		
@@ -954,7 +962,7 @@ function playlistAdd(id) {
 		if(window.jp == undefined)
 			window.jp = [];	
 		window.jp[jp.length] = {'id':id };
-		updatePlaylist(window.jp);		
+		updatePlaylist();		
 	}else{
 		loadNewVideo(id);
 	}
@@ -1004,3 +1012,9 @@ function listChannels() {
 	$("#channelsCol"+count).html($("#channelsCol"+count).html()+'<div class="channelButton" id="'+i+'Button" onclick=playChannel("'+i+'");>'+i.replace("_", " ")+' <img height="20px"  class="loadingImg" id="'+i+'LoadingImg" src="ajax-loader.gif" /></div>');	
 	}
 }
+
+function viewPlayed() {
+	window.jp.unshift(window.jpPast[0]);
+	window.jpPast.shift();
+	updatePlaylist();
+};

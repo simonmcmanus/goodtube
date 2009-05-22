@@ -311,3 +311,11 @@ div.channelButton:link {
 .loadingImg {
 	display:none;
 }
+
+.playlistItemInfo {
+	background-color:#eee;
+	position:relative;
+	left:122px;
+	top:-159px;
+	z-index:222;
+}
