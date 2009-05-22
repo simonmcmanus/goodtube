@@ -907,10 +907,9 @@ function playlistNext() {
 	if(window.jpPast == undefined)
 		window.jpPast = [];
 	loadNewVideo(window.jp[0].id);
-//	$("#sortable > #"+0).fadeOut("fast");
+	$("#sortable > #"+0).fadeOut("fast");
 	window.jp.shift();
 	jpPast.push(window.jp[0]);
-	console.log(jpPast);
 	updatePlaylist();
 //$("#sortable > #"+0).prependTo('#pastPlaylist')
 	
