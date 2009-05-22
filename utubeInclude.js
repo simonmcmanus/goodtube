@@ -827,7 +827,7 @@ ytvb.listVideosCallback = function(data) {
       		ytvb.appendVideoDataToTable(tbody, entry, i);
 		var id = parseURI(entry.id.$t);
 		if(window.autoQ)
-			playlistAdd(id);
+			playlistAdd(id, entry.media$group.media$description.$t);
     }
   }
 
@@ -917,17 +917,29 @@ function playlistNext() {
 
 function updatePlaylist() {
 	document.getElementById("sortable").innerHTML = playlistPresent(window.jp);		
+	setMouseOver();
 //	document.getElementById("pastPlaylist").innerHTML = playlistPresent(window.jpPast);		
 }
 
 function playlistDelete(position) {
+	console.log(position);
 	window.jp.splice(position, 1);
-	$("#sortable > #"+position).fadeOut("slow");	
+	$("#sortable > #li_"+position).fadeOut("slow");	
 }
 
 function playlistPlay(id) {
 	window.playRequest = true;
 	ytplayer.loadVideoById(id, 0);
+}
+
+function setMouseOver() {	
+	$(".ui-state-default").mouseover(function() {
+		$("#more_info_"+this.firstChild.id).show();
+	});
+	$(".ui-state-default").mouseout(function() {
+		$("#more_info_"+this.firstChild.id).hide();
+	});
+
 }
 
 function playlistPresent(p) {
@@ -937,11 +949,11 @@ function playlistPresent(p) {
 		for(i = 0; i < items.length; i++){
 			if(items[i]!=="" && items[i]!==undefined) {
 				var img = "http://i.ytimg.com/vi/"+items[i].id+"/2.jpg";
-				html.push('<li  id="li'+i+'" class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i].id+'" width="90"/>');
+				html.push('<li id="li_'+i+'" class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i].id+'" width="90"/>');
 				html.push('<a href="#" class="playlistPlay"  onclick="playlistPlay(\''+items[i].id+'\');">');
 				html.push('<img src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png" height="20px"</a><br />');
 				html.push('<a href="#" class="playlistDelete" onclick="playlistDelete('+i+')"><img src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png" height="20px">');
-				html.push('</a><div class="playlistItemInfo">ah</div></li>');
+				html.push('</a><div class="playlistItemInfo" id="more_info_'+items[i].id+'" style="display:none">'+items[i].desc+'</div></li>');
 			}
 		}
 		return html.join("");		
@@ -957,11 +969,11 @@ function getPlaylist(name) {
 	});
 }
 
-function playlistAdd(id) {
+function playlistAdd(id, desc) {
 	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3) {
 		if(window.jp == undefined)
 			window.jp = [];	
-		window.jp[jp.length] = {'id':id };
+		window.jp[jp.length] = {id:id, desc:desc};
 		updatePlaylist();		
 	}else{
 		loadNewVideo(id);

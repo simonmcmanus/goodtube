@@ -5,7 +5,7 @@ body {
   font-size: small;
   margin: 8px;
   margin-top: 3px;
-  overflow-x:hidden;
+/*  overflow-x:hidden;*/
 }
 
 img {
@@ -58,9 +58,6 @@ form {
   padding: 0;
 }
 
-li {
-  margin-bottom: 0.25em;
-}
 
 pre, code {
   color: #007000;
@@ -313,9 +310,17 @@ div.channelButton:link {
 }
 
 .playlistItemInfo {
-	background-color:#eee;
+	border:1px solid #eee;
+	background-color:#111;
 	position:relative;
-	left:122px;
-	top:-159px;
+	left:125px;
+	top:-168px;
 	z-index:222;
+	font-size:0.2em;
+	color:#ddd;
+	min-width:400px;
+	padding:1em;
+	text-align:left;
+	opacity:0.9;filter:alpha(opacity=90);
+	-moz-border-radius:3px;
 }
