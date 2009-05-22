@@ -826,8 +826,9 @@ ytvb.listVideosCallback = function(data) {
 		if(window.showResults != false)
       		ytvb.appendVideoDataToTable(tbody, entry, i);
 		var id = parseURI(entry.id.$t);
-		if(window.autoQ)
-			playlistAdd(id, entry.media$group.media$description.$t);
+		if(window.autoQ){
+			playlistAdd({id:id, desc:entry.media$group.media$description.$t, title:entry.media$group.media$title.$t });
+		}
     }
   }
 
@@ -908,7 +909,7 @@ function playlistNext() {
 	loadNewVideo(window.jp[0].id);
 //	$("#sortable > #"+0).fadeOut("fast");
 	window.jp.shift();
-	jpPast.push({id:window.jp[0].id});
+	jpPast.push(window.jp[0]);
 	console.log(jpPast);
 	updatePlaylist();
 //$("#sortable > #"+0).prependTo('#pastPlaylist')
@@ -922,7 +923,6 @@ function updatePlaylist() {
 }
 
 function playlistDelete(position) {
-	console.log(position);
 	window.jp.splice(position, 1);
 	$("#sortable > #li_"+position).fadeOut("slow");	
 }
@@ -953,7 +953,7 @@ function playlistPresent(p) {
 				html.push('<a href="#" class="playlistPlay"  onclick="playlistPlay(\''+items[i].id+'\');">');
 				html.push('<img src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png" height="20px"</a><br />');
 				html.push('<a href="#" class="playlistDelete" onclick="playlistDelete('+i+')"><img src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png" height="20px">');
-				html.push('</a><div class="playlistItemInfo" id="more_info_'+items[i].id+'" style="display:none">'+items[i].desc+'</div></li>');
+				html.push('</a><div class="playlistItemInfo" id="more_info_'+items[i].id+'" style="display:none"><h4>'+items[i].title+"</h4><p>"+items[i].desc+'</p></div></li>');
 			}
 		}
 		return html.join("");		
@@ -969,14 +969,14 @@ function getPlaylist(name) {
 	});
 }
 
-function playlistAdd(id, desc) {
+function playlistAdd(item) {
 	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3) {
 		if(window.jp == undefined)
 			window.jp = [];	
-		window.jp[jp.length] = {id:id, desc:desc};
+		window.jp[jp.length] = item;
 		updatePlaylist();		
 	}else{
-		loadNewVideo(id);
+		loadNewVideo(item.id);
 	}
 }
 
