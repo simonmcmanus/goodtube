@@ -327,7 +327,7 @@ div.channelButton:link {
 	left:120px;
 	top:-160px;
 	z-index:222;
-	font-size:0.2em;
+	font-size:0.4em;
 	color:#ddd;
 	min-width:400px;
 	padding:1em;
@@ -339,7 +339,7 @@ div.channelButton:link {
 .playlistItemInfo h4 {
 	padding-top:0em;
 	margin-top:0em;
-	font-size:0.9em;
+	font-size:1em;
 }
 
 #footer {
