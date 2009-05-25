@@ -980,7 +980,6 @@ function playlistAdd(item) {
 	else 
 		id = item;
 	
-	console.log(id);
 	if(window.doNotQ == undefined)
 		window.doNotQ = {};
 	if(window.doNotQ[id] != undefined){
@@ -1046,7 +1045,6 @@ function listChannels() {
 }
 
 function viewPlayed() {
-	console.log(window.jpPast[0]);
 	window.jp.unshift(window.jpPast[0]);
 	window.jpPast.shift();
 	updatePlaylist();
