@@ -173,12 +173,14 @@ p.videoDescription {
 	margin-top:0.4em;
 	padding-top:0em;
 	top:-2em;
+	width:90%;
 	position:relative;
 	}
 
 #searchResultsVideoColumn {
 	float: right;
 	background-color:white;
+	overflow:auto;
 }
 	
 .playlistColumn {
@@ -282,7 +284,8 @@ body {
 	margin:1em;
 	line-height:2.5em;
 	min-height:33px;
-	border:1px solid #111;
+	border:1px solid #666;
+	color:#444;
 	background:transparent url(gradient.png) repeat scroll 0 0;
 	-moz-border-radius:3px;
 }
@@ -304,6 +307,7 @@ body {
 div.channelButton:Hover {
 	background:url(gradient_hover.png) repeat scroll 0 0;
 	cursor:pointer;
+	border:1px solid #444;
 }
 
 div.channelButton:link {
@@ -320,7 +324,7 @@ div.channelButton:link {
 	background-color:#111;
 	position:relative;
 	left:120px;
-	top:-168px;
+	top:-160px;
 	z-index:222;
 	font-size:0.2em;
 	color:#ddd;
@@ -335,4 +339,8 @@ div.channelButton:link {
 	padding-top:0em;
 	margin-top:0em;
 	font-size:0.9em;
+}
+
+#footer {
+	font-size:0.5em;
 }

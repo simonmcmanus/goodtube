@@ -905,11 +905,12 @@ parseURI = function(uri) {
 
 function playlistNext() {
 	if(window.jpPast == undefined)
-		window.jpPast = [];
+		window.jpPast = {};
 	loadNewVideo(window.jp[0].id);
 	$("#sortable > #"+0).fadeOut("fast");
 	window.jp.shift();
-	jpPast.push(window.jp[0]);
+	jpPast[window.jp[0].id] = window.jp[0];
+//	jpPast.push(window.jp[0]);
 	updatePlaylist();
 //$("#sortable > #"+0).prependTo('#pastPlaylist')
 	
@@ -951,7 +952,7 @@ function playlistPresent(p) {
 				html.push('<li id="li_'+i+'" class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i].id+'" width="90"/>');
 				html.push('<a href="#" class="playlistPlay"  onclick="playlistPlay(\''+items[i].id+'\');">');
 				html.push('<img src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png" height="20px"</a><br />');
-				html.push('<a href="#" class="playlistDelete" onclick="playlistDelete('+i+')"><img src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png" height="20px">');
+				html.push('<a href="#" class="playlistDelete" alt="remove video from playlist" onclick="playlistDelete('+i+')"><img src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png" height="20px">');
 				html.push('</a><div class="playlistItemInfo" id="more_info_'+items[i].id+'" style="display:none"><h4>'+items[i].title+"</h4><p>"+items[i].desc+'</p></div></li>');
 			}
 		}
@@ -969,6 +970,11 @@ function getPlaylist(name) {
 }
 
 function playlistAdd(item) {
+	
+	if(window.doNotQ == undefined)
+		window.doNotQ = {};
+	if(window.doNotQ[item.id] != undefined)
+		return false;
 	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3) {
 		if(window.jp == undefined)
 			window.jp = [];	
@@ -977,6 +983,8 @@ function playlistAdd(item) {
 	}else{
 		loadNewVideo(item.id);
 	}
+
+	window.doNotQ[item.id] = item;
 }
 
 
