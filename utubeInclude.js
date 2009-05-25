@@ -905,12 +905,12 @@ parseURI = function(uri) {
 
 function playlistNext() {
 	if(window.jpPast == undefined)
-		window.jpPast = {};
+		window.jpPast = [];
 	loadNewVideo(window.jp[0].id);
 	$("#sortable > #"+0).fadeOut("fast");
 	window.jp.shift();
 	jpPast[window.jp[0].id] = window.jp[0];
-//	jpPast.push(window.jp[0]);
+	jpPast.push(window.jp[0]);
 	updatePlaylist();
 //$("#sortable > #"+0).prependTo('#pastPlaylist')
 	
@@ -999,9 +999,9 @@ function setAutoQ(checkbox) {
 
 function settingsClick() {
 	if($("#settings").css('display') == 'none' )
-		$("#settings").show("drop", { direction: "up" }, 400);
+		$("#settings").show();
 	else
-		$("#settings").hide("drop", { direction: "up" }, 200);
+		$("#settings").hide();
 }
 
 
@@ -1033,6 +1033,7 @@ function listChannels() {
 }
 
 function viewPlayed() {
+	console.log(window.jpPast[0]);
 	window.jp.unshift(window.jpPast[0]);
 	window.jpPast.shift();
 	updatePlaylist();

@@ -1,23 +1,5 @@
-<!--
-/* Copyright (c) 2007 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
--->
 <html>
 <head>
-	
-	
 	<link type="text/css" href="http://jqueryui.com/themes/base/ui.all.css" rel="stylesheet" />
   	<link href="goodtube.css" type="text/css" rel="stylesheet"/>
   	<script src="http://swfobject.googlecode.com/svn/tags/rc3/swfobject/src/swfobject.js" type="text/javascript"></script>
@@ -26,12 +8,7 @@
 	<script type="text/javascript" src="jquery/ui.sortable.js"></script>
 	<script type="text/javascript" src="http://jqueryui.com/latest/ui/ui.slider.js"></script>
 	<script src="utubeInclude.js" type="text/javascript"></script>
-	
-	
-	
 	<script type="text/javascript">
-	
-	
 	$(function() {
 		$("#sortable").sortable({
 			helper: 'clone',
@@ -47,9 +24,7 @@
 		$("#sortable").disableSelection();
 	});
 	
-	
-	$(document).ready(function(){
-		
+	$(document).ready(function(){	
 		window.autoQ = document.getElementById("autoQ").checked;
 		document.getElementById(ytvb.MAIN_SEARCH_CONTAINER_DIV).style.display = 'none';
 		document.getElementById(ytvb.TOP_SEARCH_CONTAINER_DIV).style.display = 'inline';
@@ -63,34 +38,21 @@
 			$("#resultsNumberSliderResult").html(s.value);
 		} });
 		listChannels();
- });
+ 	});
 
-
-	</script>
-	
-	
-	
-	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
+
 	try {
 	var pageTracker = _gat._getTracker("UA-530421-2");
 	pageTracker._trackPageview();
 	} catch(err) {}</script>
 	
-	
-	
 </head>
 <body>
 	
-
-
 <div id="main">
-
 	<div class='playlistColumn'>
-		
 		<div id='pastPlaylist' class='strip'>
 		played....
 		</div>
@@ -143,15 +105,10 @@
 	    </div>
 	<script type="text/javascript">
 	      // <![CDATA[
-
-	      // allowScriptAccess must be set to allow the Javascript from one 
-	      // domain to access the swf on the youtube domain
 	      var params = { allowScriptAccess: "always", bgcolor: "#cccccc",allowFullScreen: "true" , wmode: 'transparent'};
 	      // this sets the id of the object or embed tag to 'myytplayer'.
 	      // You then use this id to access the swf and make calls to the player's API
 	      var atts = { id: "myytplayer" ,allowFullScreen: "true"};
-	
-	
 	    swfobject.embedSWF("http://www.youtube.com/v/ma9I9VBKPiw&amp;border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;fs=1",
 		                         "ytapiplayer", "255", "164", "8", null, null, params, atts);
 		 //]]>
@@ -259,13 +216,7 @@
 						</div>    </div>
 			
 			</div>
-			<!--
-				<h1>Playlists</h1>
-	
-		<li><a href="#" onclick='getPlaylist("puppies");'>Puppies </a></li>
-			<li><a href="#" onclick='getPlaylist("most_watched");'>Most Watched </a></li>
-			
-		--><br />
+		<br />
 	
       </div>
       <div id="searchResultsNavigation">
