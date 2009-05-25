@@ -596,7 +596,9 @@ ytvb.playVideo = function(entryIndex, referringFeed) {
     // values.  Enable autoplay of the video.
     var html = [];
 	var vidId = entry.id.$t.replace("http://gdata.youtube.com/feeds/videos/", "");
-	playlistAdd(vidId);
+	playlistAdd({id:vidId, desc:entry.media$group.media$description.$t, title:entry.media$group.media$title.$t });
+	
+	///playlistAdd(vidId);
 	html.push('<div id="playerHolder"></div>');
   	videoPlayerDiv.innerHTML = html.join('');
 	ytvb.showRelatedVideos(entryIndex, referringFeed);
@@ -855,7 +857,9 @@ ytvb.showRelatedVideosCallback = function(data) {
     relatedVideosDiv.appendChild(img);
 	var id = parseURI(entry.id.$t);
 	if(window.autoQ)
-		playlistAdd(id);
+		playlistAdd({id:id, desc:entry.media$group.media$description.$t, title:entry.media$group.media$title.$t });
+		
+		//playlistAdd(id);
 
   }
 };
@@ -970,21 +974,29 @@ function getPlaylist(name) {
 }
 
 function playlistAdd(item) {
+	var id = "";
+	if(typeof item == "object")
+		id = item.id;
+	else 
+		id = item;
 	
+	console.log(id);
 	if(window.doNotQ == undefined)
 		window.doNotQ = {};
-	if(window.doNotQ[item.id] != undefined)
-		return false;
+	if(window.doNotQ[id] != undefined){
+		$.jGrowl("item has already been played.", { sticky: false });
+		return false;		
+	}
 	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3) {
 		if(window.jp == undefined)
 			window.jp = [];	
 		window.jp[jp.length] = item;
 		updatePlaylist();		
 	}else{
-		loadNewVideo(item.id);
+		loadNewVideo(id);
 	}
 
-	window.doNotQ[item.id] = item;
+	window.doNotQ[id] = item;
 }
 
 
@@ -1012,6 +1024,7 @@ function settingsClick() {
 function playChannel(feed) {
 	window.jp = [];
 	window.showResults = false;
+	window.autoQ = true;
 	ytvb.MAX_RESULTS_LIST = 50;
 	ytvb.listVideos(feed, "", 1);
 	$(".loadingImg").hide();	
