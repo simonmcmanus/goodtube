@@ -279,7 +279,7 @@ body {
 	margin:0.3em;
 }
 
-.channelButton {
+.channelButton, #storeArea > div {
 	background-color:#eee;
 	padding:0.2em 0.6em;
 	margin:1em;

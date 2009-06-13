@@ -1,0 +1,9 @@
+modifier: PhilHawksworth
+created: 200709241546
+modified: 200805081143
+type: None
+tags: 
+title: TaskViews
+
+DefaultReportView
+[[(create your own task view)|CreatingTaskReportViews]]

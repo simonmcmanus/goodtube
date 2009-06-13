@@ -1,0 +1,11 @@
+modifier: PhilHawksworth
+created: 200708161721
+modified: 200710221413
+type: None
+tags: TaskDefinitions
+title: StatusDefinitions
+
+Pending
+InProgress
+OnHold
+Complete

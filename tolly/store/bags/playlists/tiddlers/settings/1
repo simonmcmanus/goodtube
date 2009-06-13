@@ -1,0 +1,15 @@
+modifier: PhilHawksworth
+created: 200803251627
+modified: 20090613132218
+type: None
+tags: systemConfig excludeLists excludeSearch
+title: settings
+
+//{{{
+
+config.options.chkAutoSave = true;
+config.options.chkAnimate = true;
+config.options.chkSaveBackups = false;
+config.options.txtTheme = "TeamTasksSkin";
+
+//}}}
