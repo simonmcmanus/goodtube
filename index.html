@@ -8,6 +8,8 @@
 	<script type="text/javascript" src="jquery/ui.core.js"></script>
 	
 	<script type="text/javascript" src="jquery/cookiePlugin.js"></script>
+		<script type="text/javascript" src="tiddlyweb.js"></script>
+		<script type="text/javascript" src="jquery/JSON.js"></script>
 	
 	<script type="text/javascript" src="jquery/ui.sortable.js"></script>
 	<script type="text/javascript" src="http://jqueryui.com/latest/ui/ui.slider.js"></script>
@@ -33,6 +35,8 @@
 	
 	$(document).ready(function(){
 		window.tollyPP = $.cookie('tollyPlaylistInfo');	
+		if(window.tollyPP == undefined)
+			window.tollyPP = [];
 		console.log(window.tollyPP); // get cookie
 		$.jGrowl.defaults.closer = false;
 		window.autoQ = false;
