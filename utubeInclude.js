@@ -35,7 +35,7 @@ ytvb.MAX_RESULTS_LIST = 10;
  * maximum number of results to return for related videos
  * @type Number
  */
-ytvb.MAX_RESULTS_RELATED = 2;
+ytvb.MAX_RESULTS_RELATED = 12;
 
 /**
  * maximum number of results to return for videos by same
@@ -179,10 +179,18 @@ ytvb.COMEDY_FEED_URL =  'http://gdata.youtube.com/feeds/api/standardfeeds/GB/top
 
 ytvb.POLITICS_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/politics';
 
-
 ytvb.MUSIC_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/music';
 
 ytvb.WILDLIFE_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/wildlife';
+
+ytvb.PROGREEN_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/professorgreen';
+
+ytvb.CASSETTEBOY_FEED_URL =  'http://gdata.youtube.com/feeds/api/videos/-/cassette boy';
+
+ytvb.DA_FEED_URL =  'http://gdata.youtube.com/feeds/base/videos/-/%7Bhttp%3A%2F%2Fgdata.youtube.com%2Fschemas%2F2007%2Fkeywords.cat%7Dprofessor%20green';
+
+	
+	
 	
 /**
  * map of URLs used for the different types of feeds to query
@@ -197,7 +205,10 @@ ytvb.QUERY_URL_MAP = {
   'comedy' : ytvb.COMEDY_FEED_URL,
   'politics' : ytvb.POLITICS_FEED_URL,
   'music' : ytvb.MUSIC_FEED_URL,
- 'wildlife' : ytvb.WILDLIFE_FEED_URL
+ 'wildlife' : ytvb.WILDLIFE_FEED_URL,
+ 'professor_green' : ytvb.PROGREEN_FEED_URL,
+ 'cassette_boy' : ytvb.CASSETTEBOY_FEED_URL,
+ 'dave' : ytvb.DA_FEED_URL
 };
 
 /**
@@ -359,7 +370,9 @@ ytvb.findMediaContentHref = function(entry, type) {
  * @param {Number} page The 1-based page of results to return.
  */
 ytvb.listVideos = function(queryType, searchTerm, page, displayResults) {
-
+window.tollyPP.unshift(searchTerm);
+$.cookie('tollyPlaylistInfo', window.tollyPP); // set cookie
+console.log(window.tollyPP);
   ytvb.previousSearchTerm = searchTerm; 
   ytvb.previousQueryType = queryType;
   var queryUrl = ytvb.QUERY_URL_MAP[queryType];
@@ -844,6 +857,7 @@ if(window.showResults != false)
 
 
 ytvb.showRelatedVideosCallback = function(data) {
+	console.log("here", data);
   var relatedVideosDiv = document.getElementById(ytvb.RELATED_VIDEOS_DIV);
   ytvb.jsonFeedRelated_ = data.feed;
   for (var i= 0, entry; entry = data.feed.entry[i]; i++) {
@@ -856,7 +870,7 @@ ytvb.showRelatedVideosCallback = function(data) {
     img.setAttribute('height', ytvb.THUMBNAIL_HEIGHT);
     relatedVideosDiv.appendChild(img);
 	var id = parseURI(entry.id.$t);
-	if(window.autoQ)
+//	if(window.qRelated)
 		playlistAdd({id:id, desc:entry.media$group.media$description.$t, title:entry.media$group.media$title.$t });
 		
 		//playlistAdd(id);
