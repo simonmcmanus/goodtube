@@ -1,8 +1,0 @@
-modifier: PhilHawksworth
-created: 200710221448
-modified: 200710221449
-type: None
-tags: help
-title: DefineScopes
-
-To make it easy to organise tasks by the appropriate projects, products or whatever sensible unit best fits your needs, you can define a set of 'Scopes' in the ScopeDefinitions tiddler. This works in the same way as [[defining users|DefineUsers]].

@@ -1,0 +1,278 @@
+
+<html>
+<head>
+	<link type="text/css" href="http://jqueryui.com/themes/base/ui.all.css" rel="stylesheet" />
+  	<link href="/static/tolly/goodtube.css" type="text/css" rel="stylesheet"/>
+
+  	<script src="http://swfobject.googlecode.com/svn/tags/rc3/swfobject/src/swfobject.js" type="text/javascript"></script>
+  	<script type="text/javascript" src="/static/tolly/jquery/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="/static/tolly/jquery/ui.core.js"></script>
+	
+	<script type="text/javascript" src="/static/tolly/jquery/cookiePlugin.js"></script>
+		<script type="text/javascript" src="/static/tolly/tiddlyweb.js"></script>
+		<script type="text/javascript" src="/static/tolly/jquery/JSON.js"></script>
+	
+	<script type="text/javascript" src="/static/tolly/jquery/ui.sortable.js"></script>
+	<script type="text/javascript" src="http://jqueryui.com/latest/ui/ui.slider.js"></script>
+	<script type="text/javascript" src="/static/tolly/jgrowl/jquery.jgrowl.js"></script>
+	
+	<link rel="stylesheet" href="/static/tolly/jgrowl/jquery.jgrowl.css" type="text/css"/>
+	<script src="/static/tolly/utubeInclude.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function() {
+		$("#sortable").sortable({
+			helper: 'clone',
+			opacity:'0.8',
+			update: function(event, ui) {
+				var p = [];
+				$(this).children().each(function() {
+					if(this.firstChild!=undefined)
+						p.push(this.firstChild.id);
+				});
+				window.playlist = p.join("\n");
+		}});
+		$("#sortable").disableSelection();
+	});
+	
+	$(document).ready(function(){
+		window.tollyPP = $.cookie('tollyPlaylistInfo');	
+		if(window.tollyPP == undefined)
+			window.tollyPP = [];
+		$.jGrowl.defaults.closer = false;
+		window.autoQ = false;
+		document.getElementById(ytvb.MAIN_SEARCH_CONTAINER_DIV).style.display = 'none';
+		document.getElementById(ytvb.TOP_SEARCH_CONTAINER_DIV).style.display = 'inline';
+		$("#resultsNumberSliderResult").html(ytvb.MAX_RESULTS_LIST);
+		$("#resultsNumberSlider").slider({ 
+			max: 50,
+			min:1, 
+			value:ytvb.MAX_RESULTS_LIST,
+			stop: function(e, s) {
+			ytvb.MAX_RESULTS_LIST = s.value;
+			$("#resultsNumberSliderResult").html(s.value);
+		} });
+		listChannels();
+ 	});
+
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+	try {
+	var pageTracker = _gat._getTracker("UA-530421-2");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+	
+</head>
+<body>
+	
+<div id="main">
+	<div class='playlistColumn'>
+		<div id='pastPlaylist' class='strip'>
+		played....
+		</div>
+		
+		<a href='#' onclick='viewPlayed();'> <img src='/static/tolly/up-arrow.png' /> </a>
+		<div class="strip">
+		<ul id="sortable">
+			<li><div id="emptyPlaylist"> Playlist is empty</div> </li>
+{% for name in slide_order %}
+
+<li class="ui-state-default" id="li_3"><img width="90" id="c0IGn_BQdRE" class="playlistItem" src="http://i.ytimg.com/vi/c0IGn_BQdRE/2.jpg"/><a onclick="playlistPlay('c0IGn_BQdRE');" class="playlistPlay" href="#"><img height="20" src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png"/></a><br/><a onclick="playlistDelete(3)" alt="remove video from playlist" class="playlistDelete" href="#"><img height="20" src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png"/></a><div style="display: none;" id="more_info_c0IGn_BQdRE" class="playlistItemInfo"><h4>{{ slides[name].title }}</h4>
+<p>
+blah balh balhl
+</p>
+</div></li>
+
+
+
+
+<!--    <li>{{ slides[name].title }}</li>-->
+
+{% endfor %}
+
+		</ul>
+
+
+
+
+
+		</div>
+
+	</div>
+	<div id="topBar">
+	
+
+  <div id="titleBar">
+	<h1>tolly.tv</h1>
+	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	 <form id="searchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); return false;">
+        <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
+          <option value="all" selected="true">All Videos</option>
+          <option value="top_rated">Top Rated Videos</option>
+          <option value="most_viewed">Most Viewed Videos</option>
+          <option value="recently_featured">Recently Featured Videos</option>
+        </select>		
+		<input name="searchTerm" type="text" value="puppy">
+        <input type="submit" value="Search">
+      </form>
+
+
+    </div>
+
+	<!--
+
+	START JS PLAYER
+
+	-->
+
+		<div id="ytapiplayer">
+	      You need Flash player 8+ and JavaScript enabled to view this video.
+	    </div>
+	<script type="text/javascript">
+	      // <![CDATA[
+	      var params = { allowScriptAccess: "always", bgcolor: "#cccccc",allowFullScreen: "true" , wmode: 'transparent'};
+	      // this sets the id of the object or embed tag to 'myytplayer'.
+	      // You then use this id to access the swf and make calls to the player's API
+	      var atts = { id: "myytplayer" ,allowFullScreen: "true"};
+	    swfobject.embedSWF("http://www.youtube.com/v/ma9I9VBKPiw&amp;border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;fs=1",
+		                         "ytapiplayer", "255", "164", "8", null, null, params, atts);
+		 //]]>
+	    </script>
+
+
+
+	    <!-- HTML below here is for display of the player info + state -->
+	    <div style='display:none'>
+	      Player state: <span id="playerstate">--</span>
+	    </div>
+	    <br />
+	<div style='display:none'>
+	      <a href="javascript:void(0);" onclick="play();">Play</a> | <a href="javascript:void(0);" onclick="pause();">Pause</a> | <a href="javascript:void(0);" onclick="stop();">Stop</a> | <a href="javascript:void(0);" onclick="mute();">Mute</a> | <a href="javascript:void(0);" onclick="unMute();">Unmute</a>
+	</div>
+
+
+	    <br />
+	    <div style='display:none'>
+	      Duration: <span id="videoduration">--:--</span> | Current Time: <span id="videotime">--:--</span>
+
+	    </div>
+	    <br />
+	    <div id="bytesdisplay" style='display:none'>
+	      Bytes Total: <span id="bytestotal">--</span> | Start Bytes: <span id="startbytes">--</span> | Bytes Loaded: <span id="bytesloaded">--</span>
+	    </div>
+
+	    <br />
+
+	    <div style='display:none'>
+
+	      <input id="vol" type="text" size="2" /> 
+	      <a href="javascript:void(0)" onclick="setVolume(document.getElementById('vol').value)">&lt;- Set Volume</a>  | Volume: <span id="volume">--</span>
+	    </div>
+	    <br />
+	  </div>
+
+
+	<!--
+
+	END JS PLAYER
+
+	-->
+    <br />
+  </div>
+  <br clear="all" />
+  <div id="mainSearchBox">
+
+    <h2>Search YouTube:</h2>
+    <form id="mainSearchForm" onsubmit="ytvb.listVideos(this.queryType.value, this.searchTerm.value, 1); document.forms.searchForm.searchTerm.value=this.searchTerm.value; ytvb.hideMainSearch(); document.forms.searchForm.queryType.selectedIndex=this.queryType.selectedIndex; return false;">
+      <select name="queryType" onchange="ytvb.queryTypeChanged(this.value, this.form.searchTerm);">
+        <option value="all" selected="true">All Videos</option>
+        <option value="top_rated">Top Rated Videos</option>
+        <option value="most_viewed">Most Viewed Videos</option>
+		
+        <option value="news">News</option>
+        <option value="recently_featured">Recently Featured Videos</option>
+
+      </select>
+      <input name="searchTerm" type="text" value="puppy">
+      <input type="submit" value="Search">
+	play stuff
+    </form>
+  <table id="searchResultsVideoListTable">
+  </table>
+
+  </div>
+
+
+  <br clear="all" />
+
+<!--POST-SHADOWAREA-->
+<div id="storeArea">
+</div>
+<!--POST-STOREAREA-->
+
+  <div id="searchResults">
+
+	
+	    <div id="searchResultsListColumn">
+	
+      <div id="searchResultsVideoList">
+	
+	<h1 class='title'>Streams</h1>
+		<div id='channels'>
+			<div id='channelsCol1' class='channelsCol'></div>
+			<div id='channelsCol2' class='channelsCol'></div>
+			<div id='channelsCol3' class='channelsCol'></div>
+			</div>
+			<br  clear='all'/>
+			
+			<div id='footer'>
+					<p>
+					tolly.tv is being built by <a href='http://simonmcmanus.com'>Simon McManus</a>. There is a <a href='http://github.com'>github</a> project with the latest code <a href='http://github.com/simonmcmanus/goodtube/tree/master'>here</a>. 
+					</p>
+						<div class='settings' id="settingsButton"  onclick='settingsClick()'> settings </div>
+						<div class='settings' id='settings'>
+
+						    <div id="searchBox" >
+						
+							    <input type='checkbox'  checked='false' id='loop' onclick='setAutoQ(this)'/>Loop (When the playlist has been played it will start from the beginning again)
+						    <br/>
+							    <input type='checkbox'  checked='false' id='addRelated' onclick='setAutoQ(this)'/>Auto add related items to playlist.
+						    <br/>
+								<div id="resultsNumberSlider"></div><span id="resultsNumberSliderResult"> </span> results will be returned
+									<br/>
+
+							</div>
+						</div>    </div>
+			
+			</div>
+		<br />
+		
+		Personal Feeds : 
+	
+      </div>
+      <div id="searchResultsNavigation">
+        <form id="navigationForm">
+          <input type="button" id="previousPageButton" onclick="ytvb.listVideos(ytvb.previousQueryType, ytvb.previousSearchTerm, ytvb.previousPage);" value="Back" style="display: none;"></input>
+          <input type="button" id="nextPageButton" onclick="ytvb.listVideos(ytvb.previousQueryType, ytvb.previousSearchTerm, ytvb.nextPage);" value="Next" style="display: none;"></input>
+        </form>
+      </div>
+
+    </div>
+    <div id="searchResultsVideoColumn" >
+      <div  style='display:none' id="videoPlayer"></div>
+      <div  style='display:none' id="relatedVideos"></div>
+      <div  style='display:none' id="userVideos"></div>
+  </div>
+
+</div>
+
+
+	
+</body>
+</html>
