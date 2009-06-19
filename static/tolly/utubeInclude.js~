@@ -817,7 +817,8 @@ function clearVideo() {
 
 
 ytvb.listVideosCallback = function(data) {
-  // Stores the json data returned for later lookup by entry index value
+alert("eee");
+ // Stores the json data returned for later lookup by entry index value
   ytvb.jsonFeed_ = data.feed;
   var resultsTableContainer = document.getElementById(
       ytvb.VIDEO_LIST_TABLE_CONTAINER_DIV);
@@ -1054,7 +1055,7 @@ function listChannels() {
 			count = 0;
 		count ++;
 		
-	$("#channelsCol"+count).html($("#channelsCol"+count).html()+'<div class="channelButton" id="'+i+'Button" onclick=playChannel("'+i+'");>'+i.replace("_", " ")+' <img height="20px"  class="loadingImg" id="'+i+'LoadingImg" src="ajax-loader.gif" /></div>');	
+	$("#channelsCol"+count).html($("#channelsCol"+count).html()+'<div class="channelButton" id="'+i+'Button" onclick=playChannel("'+i+'");>'+i.replace("_", " ")+' <img height="20px"  class="loadingImg" id="'+i+'LoadingImg" src="/static/tolly/ajax-loader.gif" /></div>');	
 	}
 }
 

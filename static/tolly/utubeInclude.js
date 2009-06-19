@@ -817,7 +817,7 @@ function clearVideo() {
 
 
 ytvb.listVideosCallback = function(data) {
-  // Stores the json data returned for later lookup by entry index value
+ // Stores the json data returned for later lookup by entry index value
   ytvb.jsonFeed_ = data.feed;
   var resultsTableContainer = document.getElementById(
       ytvb.VIDEO_LIST_TABLE_CONTAINER_DIV);
