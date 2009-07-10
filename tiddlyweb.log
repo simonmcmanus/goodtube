@@ -16086,3 +16086,1433 @@ UndefinedError: 'dict' object has no element Undefined
 2009-07-10 14:30:11,580 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
 2009-07-10 14:30:11,580 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
 2009-07-10 14:30:11,581 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:30:11 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:34:56,478 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:34:56,480 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:34:56,525 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:34:56,526 DEBUG    running command server with [u'127.0.0.1', u'127']
+2009-07-10 14:34:56,550 DEBUG    attempt to import system plugin static
+2009-07-10 14:34:56,551 DEBUG    attempt to import system plugin hi
+2009-07-10 14:34:56,636 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:34:56,636 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:34:56,636 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:34:56,636 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:34:56,636 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:34:56,636 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:34:56,637 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:34:56,637 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:34:56,637 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:34:56,637 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:34:56,637 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:34:56,637 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:34:56,637 DEBUG    starting cherrypy at 127.0.0.1:127
+2009-07-10 14:35:02,375 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:35:02,381 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:35:02,451 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:35:02 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:36:43,053 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:36:43,053 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:36:43,055 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:36:43 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:37:02,446 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:37:02,447 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:37:02,477 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 62, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 1, in top-level template code
+    <h1>hi {{ slides[name].title }}</h1>
+  File "/home/user/tolly/jinja2/environment.py", line 334, in getattr
+  File "/home/user/tolly/jinja2/runtime.py", line 403, in _fail_with_undefined_error
+UndefinedError: 'dict' object has no element Undefined
+
+2009-07-10 14:37:02,477 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:37:02 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:37:41,753 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:37:41,754 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:37:41,779 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 62, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:37:41,780 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:37:41 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:38:34,561 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:38:34,562 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:38:34,608 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:38:34,609 DEBUG    running command server with [u'127.0.0.1', u'127']
+2009-07-10 14:38:34,632 DEBUG    attempt to import system plugin static
+2009-07-10 14:38:34,633 DEBUG    attempt to import system plugin hi
+2009-07-10 14:38:46,322 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:38:46,324 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:38:46,369 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:38:46,370 DEBUG    running command server with [u'127.0.0.1', u'127']
+2009-07-10 14:38:46,394 DEBUG    attempt to import system plugin static
+2009-07-10 14:38:46,395 DEBUG    attempt to import system plugin hi
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:38:46,480 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:38:46,481 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:38:46,481 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:38:46,481 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:38:46,481 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:38:46,481 DEBUG    starting cherrypy at 127.0.0.1:127
+2009-07-10 14:38:49,954 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:38:49,955 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:38:50,001 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:38:50,002 DEBUG    running command server with [u'127.0.0.1', u'128']
+2009-07-10 14:38:50,025 DEBUG    attempt to import system plugin static
+2009-07-10 14:38:50,026 DEBUG    attempt to import system plugin hi
+2009-07-10 14:38:50,108 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:38:50,108 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:38:50,109 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:38:50,110 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:38:50,110 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:38:50,110 DEBUG    starting cherrypy at 127.0.0.1:128
+2009-07-10 14:38:53,929 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:38:53,935 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:38:54,045 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:38:54,046 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:38:54 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:38:54,126 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:38:54,126 DEBUG    negotiating for accept and extensions ['image/png', 'image/*', '*/*', '*/*']
+2009-07-10 14:38:54,127 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:38:54 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:38:57,127 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:38:57,128 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:38:57,128 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:38:57 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:39:32,576 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:39:32,577 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:39:32,613 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:39:32,613 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:39:32 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:42,296 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:41:42,296 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:41:42,323 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:41:42,323 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:42 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:43,781 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:41:43,782 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:41:43,806 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:41:43,807 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:43 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:48,901 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:41:48,902 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:41:48,948 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:41:48,949 DEBUG    running command server with [u'127.0.0.1', u'128']
+2009-07-10 14:41:48,973 DEBUG    attempt to import system plugin static
+2009-07-10 14:41:48,974 DEBUG    attempt to import system plugin hi
+2009-07-10 14:41:49,057 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:41:49,057 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:41:49,057 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:41:49,057 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:41:49,057 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:41:49,057 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:41:49,057 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:41:49,058 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:41:49,058 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:41:49,058 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:41:49,058 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:41:49,058 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:41:49,058 DEBUG    starting cherrypy at 127.0.0.1:128
+2009-07-10 14:41:50,929 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:41:50,931 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:41:50,976 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:41:50,977 DEBUG    running command server with [u'127.0.0.1', u'129']
+2009-07-10 14:41:51,001 DEBUG    attempt to import system plugin static
+2009-07-10 14:41:51,002 DEBUG    attempt to import system plugin hi
+2009-07-10 14:41:51,085 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:41:51,085 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:41:51,085 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:41:51,085 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:41:51,086 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:41:51,087 DEBUG    starting cherrypy at 127.0.0.1:129
+2009-07-10 14:41:54,141 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:41:54,147 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:41:54,238 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:41:54,238 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:54 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:54,466 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:41:54,466 DEBUG    negotiating for accept and extensions ['image/png', 'image/*', '*/*', '*/*']
+2009-07-10 14:41:54,466 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:54 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:57,113 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:41:57,113 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:41:57,150 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:41:57,150 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:57 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:57,452 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:41:57,453 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:41:57,453 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:57 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:57,461 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:41:57,462 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:41:57,462 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:57 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:41:58,519 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:41:58,520 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:41:58,545 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:41:58,545 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:41:58 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:09,743 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:09,743 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:09,769 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:42:09,769 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:09 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:10,736 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:10,737 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:10,763 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:42:10,764 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:10 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:11,680 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:11,680 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:11,705 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:42:11,705 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:11 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:12,526 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:12,526 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:12,552 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/playlist.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:42:12,552 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:12 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:21,532 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:42:21,534 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:42:21,580 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:42:21,581 DEBUG    running command server with [u'127.0.0.1', u'130']
+2009-07-10 14:42:21,604 DEBUG    attempt to import system plugin static
+2009-07-10 14:42:21,605 DEBUG    attempt to import system plugin hi
+2009-07-10 14:42:21,688 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:42:21,688 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:42:21,688 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:42:21,688 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:42:21,688 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:42:21,689 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:42:21,689 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:42:21,689 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:42:21,689 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:42:21,689 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:42:21,689 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:42:21,689 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:42:21,690 DEBUG    starting cherrypy at 127.0.0.1:130
+2009-07-10 14:42:24,868 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:24,875 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:24,953 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 1, in top-level template code
+    <h1>hi {{ slides[name].title }}</h1>
+  File "/home/user/tolly/jinja2/environment.py", line 334, in getattr
+  File "/home/user/tolly/jinja2/runtime.py", line 403, in _fail_with_undefined_error
+UndefinedError: 'dict' object has no element Undefined
+
+2009-07-10 14:42:24,954 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:24 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:25,079 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:42:25,079 DEBUG    negotiating for accept and extensions ['image/png', 'image/*', '*/*', '*/*']
+2009-07-10 14:42:25,079 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:25 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:26,793 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:26,793 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:26,818 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 1, in top-level template code
+    <h1>hi {{ slides[name].title }}</h1>
+  File "/home/user/tolly/jinja2/environment.py", line 334, in getattr
+  File "/home/user/tolly/jinja2/runtime.py", line 403, in _fail_with_undefined_error
+UndefinedError: 'dict' object has no element Undefined
+
+2009-07-10 14:42:26,821 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:26 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:28,077 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:42:28,077 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:28,078 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:28 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:28,091 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:42:28,092 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:28,092 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:28 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:28,492 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:28,492 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:28,506 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 1, in top-level template code
+    <h1>hi {{ slides[name].title }}</h1>
+  File "/home/user/tolly/jinja2/environment.py", line 334, in getattr
+  File "/home/user/tolly/jinja2/runtime.py", line 403, in _fail_with_undefined_error
+UndefinedError: 'dict' object has no element Undefined
+
+2009-07-10 14:42:28,506 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:28 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:28,980 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:28,981 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:28,992 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 1, in top-level template code
+    <h1>hi {{ slides[name].title }}</h1>
+  File "/home/user/tolly/jinja2/environment.py", line 334, in getattr
+  File "/home/user/tolly/jinja2/runtime.py", line 403, in _fail_with_undefined_error
+UndefinedError: 'dict' object has no element Undefined
+
+2009-07-10 14:42:28,992 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:28 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:29,007 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:29,007 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:29,020 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 1, in top-level template code
+    <h1>hi {{ slides[name].title }}</h1>
+  File "/home/user/tolly/jinja2/environment.py", line 334, in getattr
+  File "/home/user/tolly/jinja2/runtime.py", line 403, in _fail_with_undefined_error
+UndefinedError: 'dict' object has no element Undefined
+
+2009-07-10 14:42:29,021 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:29 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:29,049 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:29,049 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:29,063 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 63, in list_tiddlers
+    time_location=time_location)
+  File "templates/hi.html", line 1, in top-level template code
+    <h1>hi {{ slides[name].title }}</h1>
+  File "/home/user/tolly/jinja2/environment.py", line 334, in getattr
+  File "/home/user/tolly/jinja2/runtime.py", line 403, in _fail_with_undefined_error
+UndefinedError: 'dict' object has no element Undefined
+
+2009-07-10 14:42:29,063 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:29 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:42:47,235 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:42:47,235 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:42:47,247 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:42:47 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:01,970 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:43:01,970 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:01,972 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:01 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:04,958 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists" and query ""
+2009-07-10 14:43:04,959 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:04,960 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:04 ] "GET /bags/activePlaylists HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:07,898 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists.hi" and query ""
+2009-07-10 14:43:07,899 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:07,901 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:07 ] "GET /bags/activePlaylists.hi HTTP/1.1" 415 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:15,585 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists" and query ""
+2009-07-10 14:43:15,586 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:15,586 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:15 ] "GET /bags/activePlaylists HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:17,026 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers" and query ""
+2009-07-10 14:43:17,026 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:17,028 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:17 ] "GET /bags/activePlaylists/tiddlers HTTP/1.1" 200 - "http://127.0.0.1:130/bags/activePlaylists" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:20,335 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:43:20,335 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:20,337 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:20 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:28,259 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddler" and query ""
+2009-07-10 14:43:28,260 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:28,260 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:28 ] "GET /bags/activePlaylists/tiddler HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:30,280 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers" and query ""
+2009-07-10 14:43:30,280 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:30,282 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:30 ] "GET /bags/activePlaylists/tiddlers HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:31,604 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green" and query ""
+2009-07-10 14:43:31,605 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:31,606 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:43:31,614 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:31 ] "GET /bags/activePlaylists/tiddlers/green HTTP/1.1" 200 - "http://127.0.0.1:130/bags/activePlaylists/tiddlers" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:34,441 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:43:34,442 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:34,443 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:43:34,451 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:34 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:52,574 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:43:52,574 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:43:52,576 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:43:52,576 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:43:52 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:43:58,529 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:43:58,531 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:43:58,577 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:43:58,577 DEBUG    running command server with [u'127.0.0.1', u'131']
+2009-07-10 14:43:58,601 DEBUG    attempt to import system plugin static
+2009-07-10 14:43:58,602 DEBUG    attempt to import system plugin hi
+2009-07-10 14:44:10,361 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:44:10,363 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:44:10,409 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:44:10,410 DEBUG    running command server with [u'127.0.0.1', u'131']
+2009-07-10 14:44:10,433 DEBUG    attempt to import system plugin static
+2009-07-10 14:44:10,434 DEBUG    attempt to import system plugin hi
+2009-07-10 14:44:10,518 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:44:10,518 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:44:10,519 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:44:10,520 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:44:10,520 DEBUG    starting cherrypy at 127.0.0.1:131
+2009-07-10 14:44:14,116 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:44:14,123 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:14,125 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:44:14,141 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+    self.template = template_env.get_template('playlist.html')
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:44:14,141 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:14 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:14,344 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:44:14,344 DEBUG    negotiating for accept and extensions ['image/png', 'image/*', '*/*', '*/*']
+2009-07-10 14:44:14,345 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:14 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:17,346 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:44:17,347 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:17,347 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:17 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:20,155 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:44:20,155 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:20,214 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:20 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:21,087 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:44:21,087 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:21,089 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:21 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:22,732 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:44:22,733 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:22,734 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:44:22,736 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+    self.template = template_env.get_template('playlist.html')
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:44:22,736 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:22 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:45,847 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:44:45,849 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:44:45,895 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:44:45,896 DEBUG    running command server with [u'127.0.0.1', u'131']
+2009-07-10 14:44:45,919 DEBUG    attempt to import system plugin static
+2009-07-10 14:44:45,920 DEBUG    attempt to import system plugin hi
+2009-07-10 14:44:46,004 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:44:46,004 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:44:46,004 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:44:46,004 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:44:46,005 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:44:46,006 DEBUG    starting cherrypy at 127.0.0.1:131
+2009-07-10 14:44:47,725 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:44:47,727 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:44:47,772 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:44:47,773 DEBUG    running command server with [u'127.0.0.1', u'132']
+2009-07-10 14:44:47,796 DEBUG    attempt to import system plugin static
+2009-07-10 14:44:47,797 DEBUG    attempt to import system plugin hi
+2009-07-10 14:44:47,882 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:44:47,882 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:44:47,882 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:44:47,882 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:44:47,883 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:44:47,884 DEBUG    starting cherrypy at 127.0.0.1:132
+2009-07-10 14:44:51,833 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:44:51,840 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:51,843 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:44:51,859 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+    self.template = template_env.get_template('hi2.html')
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:44:51,859 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:51 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:51,963 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:44:51,964 DEBUG    negotiating for accept and extensions ['image/png', 'image/*', '*/*', '*/*']
+2009-07-10 14:44:51,964 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:51 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:53,857 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:44:53,857 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:53,917 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:53 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:54,960 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:44:54,960 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:54,961 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:54 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:54,969 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:44:54,969 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:54,969 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:54 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:44:56,886 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:44:56,886 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:44:56,888 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:44:56,889 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+    self.template = template_env.get_template('hi2.html')
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:44:56,890 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:44:56 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:45:57,760 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:45:57,760 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:45:57,762 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:45:57,764 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+    self.template = template_env.get_template('hi1.html')
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:45:57,764 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:45:57 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:46:15,953 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:46:15,954 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:46:15,955 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:46:15,957 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:46:15,957 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:46:15 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:46:16,946 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:46:16,946 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:46:16,948 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:46:16,950 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:46:16,950 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:46:16 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:46:18,332 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:46:18,332 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:46:18,333 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:46:18,336 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 32, in get
+    return _send_tiddler(environ, start_response, tiddler)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/tiddler.py", line 355, in _send_tiddler
+    content = serializer.to_string()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 61, in to_string
+    return self.__str__()
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 55, in __str__
+    return string_func(self.object)
+  File "/home/user/goodtube/hi.py", line 36, in tiddler_as
+NameError: global name 'template_env' is not defined
+
+2009-07-10 14:46:18,336 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:46:18 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:46:25,853 DEBUG    TiddlyWeb starting up as /usr/bin/twanager
+2009-07-10 14:46:25,855 DEBUG    attempting to import twanager plugin tiddlyweb.fromsvn
+2009-07-10 14:46:25,901 DEBUG    attempting to import twanager plugin tiddlyweb.instancer
+2009-07-10 14:46:25,902 DEBUG    running command server with [u'127.0.0.1', u'133']
+2009-07-10 14:46:25,925 DEBUG    attempt to import system plugin static
+2009-07-10 14:46:25,926 DEBUG    attempt to import system plugin hi
+2009-07-10 14:46:26,009 DEBUG    wrapping app with <class 'tiddlyweb.web.negotiate.Negotiate'>
+2009-07-10 14:46:26,009 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.Header'>
+2009-07-10 14:46:26,009 DEBUG    wrapping app with <class 'tiddlyweb.web.extractor.UserExtract'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.StoreSet'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.query.Query'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Environator'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.serve.Configurator'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.HTMLPresenter'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.PermissionsExceptor'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.http.HTTPExceptor'>
+2009-07-10 14:46:26,010 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.EncodeUTF8'>
+2009-07-10 14:46:26,011 DEBUG    wrapping app with <class 'tiddlyweb.web.wsgi.SimpleLog'>
+2009-07-10 14:46:26,011 DEBUG    starting cherrypy at 127.0.0.1:133
+2009-07-10 14:46:32,060 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:46:32,066 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:46:32,137 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:46:32 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:46:32,177 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:46:32,177 DEBUG    negotiating for accept and extensions ['image/png', 'image/*', '*/*', '*/*']
+2009-07-10 14:46:32,177 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:46:32 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:46:35,204 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/favicon.ico" and query ""
+2009-07-10 14:46:35,205 DEBUG    negotiating for accept and extensions ['text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:46:35,205 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:46:35 ] "GET /favicon.ico HTTP/1.1" 404 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:46:38,362 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers/green.hi" and query ""
+2009-07-10 14:46:38,363 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:46:38,364 DEBUG    attempting to validate green with revision 1
+2009-07-10 14:46:38,385 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:46:38 ] "GET /bags/activePlaylists/tiddlers/green.hi HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:49:51,689 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:49:51,689 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:49:51,691 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:49:51 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:50:07,593 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:50:07,594 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:50:07,626 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 65, in list_tiddlers
+  File "templates/hi.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:50:07,627 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:50:07 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"
+2009-07-10 14:52:08,665 DEBUG    starting "GET" request with uri "None", script_name "", path_info "/bags/activePlaylists/tiddlers.hi" and query ""
+2009-07-10 14:52:08,665 DEBUG    negotiating for accept and extensions ['application/x-s5+html', 'text/html', 'application/xhtml+xml', 'application/xml', '*/*', '*/*']
+2009-07-10 14:52:08,691 WARNING  Traceback (most recent call last):
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/http.py", line 108, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 220, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 47, in __call__
+    output = self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 117, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/serve.py", line 103, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/query.py", line 28, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 186, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/extractor.py", line 27, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/wsgi.py", line 33, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/negotiate.py", line 21, in __call__
+    return self.application(environ, start_response)
+  File "build/bdist.linux-i686/egg/selector.py", line 161, in __call__
+    return app(environ, start_response)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/handler/bag.py", line 98, in get_tiddlers
+    return send_tiddlers(environ, start_response, tmp_bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/web/sendtiddlers.py", line 50, in send_tiddlers
+    output = serializer.list_tiddlers(bag)
+  File "build/bdist.linux-i686/egg/tiddlyweb/serializer.py", line 94, in list_tiddlers
+    return self.serialization.list_tiddlers(bag)
+  File "/home/user/goodtube/hi.py", line 65, in list_tiddlers
+  File "templates/hi.html", line 77, in top-level template code
+    {% for name in slide_order %}
+TypeError: 'NoneType' object is not iterable
+
+2009-07-10 14:52:08,691 INFO     127.0.0.1 - GUEST [10/Jul/2009:14:52:08 ] "GET /bags/activePlaylists/tiddlers.hi HTTP/1.1" 500 - "-" "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.11) Gecko/2009060309 Ubuntu/8.04 (hardy) Firefox/3.0.11"

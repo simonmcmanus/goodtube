@@ -10,7 +10,7 @@ from tiddlyweb.model.bag import Bag
  
 EXTENSION_TYPES = { 'hi': 'application/x-s5+html' }
 SERIALIZERS = {
-        'application/x-s5+html': ['s5', 'text/html; charset=UTF-8']
+        'application/x-s5+html': ['hi', 'text/html; charset=UTF-8']
         }
  
 DEFAULT_TITLE = 'S5 Title'
@@ -33,6 +33,8 @@ class Serialization(SerializationInterface):
         self.template = template_env.get_template('hi.html')
  
     def tiddler_as(self, tiddler):
+        template_env = Environment(loader=FileSystemLoader('templates'))
+	self.template = template_env.get_template('hi1.html')
         bag = Bag('tmpbag', tmpbag=True)
         bag.add_tiddler(tiddler)
         return self.list_tiddlers(bag)
