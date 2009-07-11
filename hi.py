@@ -30,11 +30,11 @@ class Serialization(SerializationInterface):
  
     def _init(self):
         template_env = Environment(loader=FileSystemLoader('templates'))
-        self.template = template_env.get_template('hi.html')
+        self.template = template_env.get_template('playlist.html')
  
     def tiddler_as(self, tiddler):
         template_env = Environment(loader=FileSystemLoader('templates'))
-	self.template = template_env.get_template('hi1.html')
+	self.template = template_env.get_template('autoPlayRelated.html')
         bag = Bag('tmpbag', tmpbag=True)
         bag.add_tiddler(tiddler)
         return self.list_tiddlers(bag)

@@ -1063,3 +1063,10 @@ function viewPlayed() {
 	window.jpPast.shift();
 	updatePlaylist();
 };
+
+function findOtherFragmentsCallback(data) {
+	for (var i= 0, entry; entry = data.feed.entry[i]; i++) {
+		console.log(entry.title.$t);
+	}
+	console.log(data);
+}
