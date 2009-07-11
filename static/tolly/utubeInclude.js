@@ -684,6 +684,11 @@ function onYouTubePlayerReady(playerId) {
   updateytplayerInfo();
   ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
   ytplayer.addEventListener("onError", "onPlayerError");
+
+    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/iloM0vjEAMY/related?a=1", 
+      'showVideosByUserfScript', 
+      'findOtherFragmentsCallback');
+   
 }
 
 // THIS FUNCTION IS OVERRIDDEN BELOW
@@ -1000,7 +1005,7 @@ function playlistAdd(item) {
 		$.jGrowl("item has already been played.", { sticky: false });
 		return false;		
 	}
-	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3) {
+	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3 || ytplayer.getPlayerState() ==5) {
 		if(window.jp == undefined)
 			window.jp = [];	
 		window.jp[jp.length] = item;
@@ -1070,15 +1075,17 @@ function stripFirstBracket(string) {
 
 function findOtherFragmentsCallback(data) {
 	var fragTitles = [];
+	var titleIDLookUp = {};
 	for (var i= 0, entry; entry = data.feed.entry[i]; i++) {
 		if(stripFirstBracket(entry.title.$t) == stripFirstBracket(tolly.title)) {
 			fragTitles[fragTitles.length++] = entry.title.$t;
+			titleIDLookUp[entry.title.$t] = entry.id.$t;
 		}		
 	}
 	fragTitles = fragTitles.sort();
+console.log("b is", titleIDLookUp);
 	for(var c = 0; fragTitles.length > c; c++){
-		console.log(fragTitles[c]);
-		//playlistAdd(parseURI(entry.id.$t));
+		playlistAdd({id:parseURI(titleIDLookUp[fragTitles[c]])});
 
 	}
 
