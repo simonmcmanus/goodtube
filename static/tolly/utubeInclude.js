@@ -1064,9 +1064,24 @@ function viewPlayed() {
 	updatePlaylist();
 };
 
+function stripFirstBracket(string) {
+	return string.substring(0, string.indexOf('('));
+}
+
 function findOtherFragmentsCallback(data) {
+	var fragTitles = [];
 	for (var i= 0, entry; entry = data.feed.entry[i]; i++) {
-		console.log(entry.title.$t);
+		if(stripFirstBracket(entry.title.$t) == stripFirstBracket(tolly.title)) {
+			fragTitles[fragTitles.length++] = entry.title.$t;
+		}		
 	}
-	console.log(data);
+	fragTitles = fragTitles.sort();
+	for(var c = 0; fragTitles.length > c; c++){
+		console.log(fragTitles[c]);
+		//playlistAdd(parseURI(entry.id.$t));
+
+	}
+
+
+
 }

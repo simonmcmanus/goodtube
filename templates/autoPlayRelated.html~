@@ -53,7 +53,7 @@
     listChannels();
     
 // look for other fragments 
-    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/iloM0vjEAMY/related?max=12", 
+    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/iloM0vjEAMY/related?a=1", 
       'showVideosByUserfScript', 
       'findOtherFragmentsCallback');
    });
@@ -143,6 +143,9 @@ blah balh balhl
    swfobject.embedSWF("http://www.youtube.com/v/{{ slides[name].fields.id }}&amp;border=0&amp;enablejsapi=1&amp;playerapiid=ytplayer&amp;fs=1",
      "ytapiplayer", "255", "164", "8", null, null, params, atts);
      //]]>
+var tolly = {};
+tolly.title = '{{ slides[name].fields.youTubeTitle}}';
+alert(tolly.title);
    </script>
  
  
