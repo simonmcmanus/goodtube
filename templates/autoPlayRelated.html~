@@ -141,6 +141,7 @@ blah balh balhl
      //]]>
 var tolly = {};
 tolly.title = '{{ slides[name].fields.youTubeTitle}}';
+tolly.id =  '{{ slides[name].fields.id}}';
    </script>
  
  

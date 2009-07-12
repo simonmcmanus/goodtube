@@ -558,11 +558,8 @@ ytvb.generatePlayVideoLinkOnclick = function(videoUrl,
  */
 ytvb.appendVideoDataToTable = function(tbody, entry, entryIndex) {
   var tr = document.createElement('tr');
-  tr.onclick = ytvb.generatePlayVideoLinkOnclick(entry.id.$t, entryIndex, 
-      ytvb.REFERRING_FEED_TYPE_MAIN);
-
-
-  var thumbnailTd = document.createElement('td');
+  tr.onclick = ytvb.generatePlayVideoLinkOnclick(entry.id.$t, entryIndex, ytvb.REFERRING_FEED_TYPE_MAIN);
+ var thumbnailTd = document.createElement('td');
   thumbnailTd.setAttribute('width', '130');
   var thumbnailImage = document.createElement('img');
   thumbnailImage.setAttribute('src', 
@@ -574,10 +571,20 @@ ytvb.appendVideoDataToTable = function(tbody, entry, entryIndex) {
   var metadataLink = document.createElement('a');
   metadataLink.setAttribute('href', '#'); 
   metadataLink.innerHTML = entry.media$group.media$title.$t;
+
+  var metadataDefragLink = document.createElement('a');
+  metadataDefragLink.innerHTML = 'defrag';
+  metadataDefragLink.setAttribute('href', '#'); 
+  metadataDefragLink.onclick = function() {
+console.log(this); 
+    return true;
+  };
+
   var descPara = document.createElement('p');
   descPara.innerHTML = entry.media$group.media$description.$t;
   descPara.setAttribute('class', ytvb.VIDEO_DESCRIPTION_CSS_CLASS);
   metadataTd.appendChild(metadataLink);
+  metadataTd.appendChild(metadataDefragLink);
   metadataTd.appendChild(descPara);
 
 
@@ -685,7 +692,7 @@ function onYouTubePlayerReady(playerId) {
   ytplayer.addEventListener("onStateChange", "onytplayerStateChange");
   ytplayer.addEventListener("onError", "onPlayerError");
 
-    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/iloM0vjEAMY/related?a=1", 
+    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/"+tolly.id+"/related?a=1", 
       'showVideosByUserfScript', 
       'findOtherFragmentsCallback');
    
@@ -1070,7 +1077,7 @@ function viewPlayed() {
 };
 
 function stripFirstBracket(string) {
-	return string.substring(0, string.indexOf('('));
+	return string.substring(0, string.indexOf('Part'));
 }
 
 function findOtherFragmentsCallback(data) {
@@ -1085,8 +1092,7 @@ function findOtherFragmentsCallback(data) {
 	fragTitles = fragTitles.sort();
 console.log("b is", titleIDLookUp);
 	for(var c = 0; fragTitles.length > c; c++){
-		console.log(parseURI(titleIDLookUp[fragTitles[c]]));
-		playlistAdd(parseURI(titleIDLookUp[fragTitles[c]]));
+		playlistAdd({id:parseURI(titleIDLookUp[fragTitles[c]]),title: fragTitles[c]});
 
 	}
 

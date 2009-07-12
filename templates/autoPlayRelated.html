@@ -52,7 +52,11 @@
     } });
     listChannels();
     
-});
+// look for other fragments 
+    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/iloM0vjEAMY/related?a=1", 
+      'showVideosByUserfScript', 
+      'findOtherFragmentsCallback');
+   });
  
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -141,6 +145,7 @@ blah balh balhl
      //]]>
 var tolly = {};
 tolly.title = '{{ slides[name].fields.youTubeTitle}}';
+
    </script>
  
  
