@@ -8,9 +8,9 @@ from tiddlyweb.serializations import SerializationInterface
 from tiddlyweb.model.bag import Bag
  
  
-EXTENSION_TYPES = { 'hi': 'application/x-s5+html' }
+EXTENSION_TYPES = { 'hi': 'text/html' }
 SERIALIZERS = {
-        'application/x-s5+html': ['hi', 'text/html; charset=UTF-8']
+        'text+html': ['hi', 'text/html; charset=UTF-8']
         }
  
 DEFAULT_TITLE = 'S5 Title'
@@ -34,7 +34,7 @@ class Serialization(SerializationInterface):
  
     def tiddler_as(self, tiddler):
         template_env = Environment(loader=FileSystemLoader('templates'))
-	self.template = template_env.get_template('hi1.html')
+	self.template = template_env.get_template('autoPlayRelated.html')
         bag = Bag('tmpbag', tmpbag=True)
         bag.add_tiddler(tiddler)
         return self.list_tiddlers(bag)

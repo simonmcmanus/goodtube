@@ -10,8 +10,8 @@ from tiddlyweb.web.sendtiddlers import send_tiddlers
 
 
 
-def dyna(environ, start_response):
-
+def dyna(environ, start_response): 
+    print(environ)
     name = environ['wsgiorg.routing_args'][1].get('name', 'default')
     recipe = Recipe('tmp')
     recipe.set_recipe([
