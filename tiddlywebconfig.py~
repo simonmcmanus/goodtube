@@ -1,5 +1,4 @@
 config = {
 	'log_level': 'DEBUG',
-	'system_plugins': ['static','hi',  'homepage1'],
-        'server_response_filters': ['HTMLPresenter']
+	'system_plugins': ['static','hi',  'homepage1']
 }
