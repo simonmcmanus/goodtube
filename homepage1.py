@@ -1,7 +1,10 @@
 from tiddlyweb.web import util as web
 
 def homepage(environ, start_response):
-	return _generate_response('bong', environ, start_response);
+	fin = open("templates/homepage.html", "r")
+	htmlStr = fin.read()
+	fin.close()
+	return _generate_response(htmlStr, environ, start_response);
 
 
 def _generate_response(content, environ, start_response):

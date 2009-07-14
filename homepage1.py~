@@ -1,6 +1,11 @@
 from tiddlyweb.web import util as web
 
 def homepage(environ, start_response):
+	fin = open("templates/homepage.html", "r")
+	str3 = fin.read()
+	fin.close()
+	print "Contents of file English101.txt:"
+	print str3
 	return _generate_response('bong', environ, start_response);
 
 
