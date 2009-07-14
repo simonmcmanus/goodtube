@@ -1,6 +1,5 @@
 config = {
 	'log_level': 'DEBUG',
-	'system_plugins': ['static','hi', 'tollyUsers'],
-	'serializers': {'html': ['hi', 'application/x-s5+html; charset=UTF-8']},
+	'system_plugins': ['static','hi',  'homepage1'],
+        'server_response_filters': ['HTMLPresenter']
 }
-

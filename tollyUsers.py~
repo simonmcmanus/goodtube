@@ -1,4 +1,6 @@
 """
+def homepage(environ, start_response):
+	return "Holla"
 A quick plugin to demonstrate creating
 recipes on the fly.
 """
@@ -10,8 +12,8 @@ from tiddlyweb.web.sendtiddlers import send_tiddlers
 
 
 
-def dyna(environ, start_response):
-
+def dyna(environ, start_response): 
+    print(environ)
     name = environ['wsgiorg.routing_args'][1].get('name', 'default')
     recipe = Recipe('tmp')
     recipe.set_recipe([
@@ -25,6 +27,16 @@ def dyna(environ, start_response):
     bag.add_tiddlers(tiddlers)
     return send_tiddlers(environ, start_response, bag)
     
+def homepage(environ, start_response):
+	return ["hello"]
+ 
+
+def replace_handler(selector, path, new_handler):
+    for index, (regex, handler) in enumerate(selector.mappings):
+        if regex.match(path) is not None:
+            selector.mappings[index] = (regex, new_handler)
+
 
 def init(config):
     config['selector'].add('/user/{name}', GET=dyna)
+

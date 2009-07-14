@@ -1,12 +1,13 @@
  
 from jinja2 import Environment, FileSystemLoader
  
-import logging
+import logging, urllib
  
 from tiddlyweb.wikklyhtml import wikitext_to_wikklyhtml
 from tiddlyweb.serializations import SerializationInterface
 from tiddlyweb.model.bag import Bag
- 
+from tiddlyweb.web.util import encode_name
+
  
 EXTENSION_TYPES = { 'hi': 'text/html' }
 SERIALIZERS = {
@@ -18,7 +19,6 @@ DEFAULT_SUBTITLE = 'S5 Subtitle'
 DEFAULT_PRESENTER = 'S5 Presenter'
 DEFAULT_AFFILIATION = 'S5 Affiliation'
 DEFAULT_TIME_LOCATION = 'S5 Time Location'
- 
  
 class Serialization(SerializationInterface):
  
@@ -32,6 +32,36 @@ class Serialization(SerializationInterface):
         template_env = Environment(loader=FileSystemLoader('templates'))
         self.template = template_env.get_template('playlist.html')
  
+    def list_bags(self, bags):
+        """
+        List the bags on the system as html.
+        """
+        self.environ['tiddlyweb.title'] = 'Bags'
+        lines = []
+        output = '<ul id="bags" class="listing">\n'
+        for bag in bags:
+            line = '<li><a href="bags/%s">%s</a></li>' % (
+                    encode_name(bag.name), bag.name)
+            lines.append(line)
+        output += "\n".join(lines)
+        return output + '\n</ul><h1>h1</h1>'
+
+    def bag_as(self, bag):
+        """
+        List the bags on the system as html.
+        """
+        self.environ['tiddlyweb.title'] = 'Bags'
+        lines = []
+        output = '<ul id="bags" class="listing">\n'
+        for bag in bags:
+            line = '<li><a href="bags/%s">%s</a></li>' % (
+                    encode_name(bag.name), bag.name)
+            lines.append(line)
+        output += "\n".join(lines)
+        return output + '\n</ul><h1>h1</h1>'
+
+
+
     def tiddler_as(self, tiddler):
         template_env = Environment(loader=FileSystemLoader('templates'))
 	self.template = template_env.get_template('autoPlayRelated.html')

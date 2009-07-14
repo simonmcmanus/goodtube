@@ -1,4 +1,6 @@
 """
+def homepage(environ, start_response):
+	return "Holla"
 A quick plugin to demonstrate creating
 recipes on the fly.
 """
@@ -26,5 +28,8 @@ def dyna(environ, start_response):
     return send_tiddlers(environ, start_response, bag)
     
 
+
+
 def init(config):
     config['selector'].add('/user/{name}', GET=dyna)
+    config['selector'].add('/', GET=homepage)
