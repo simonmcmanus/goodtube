@@ -1,0 +1,372 @@
+body {
+  background-color: #444;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: small;
+  margin: 8px;
+  margin-top: 3px;
+/*  overflow-x:hidden;*/
+}
+
+img {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+a:link {
+  color: #0000cc;
+}
+
+a:active {
+  color: #cc0000;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+h1 {
+  font-size: x-large;
+  margin-top: 0px;
+  margin-bottom: 5px;
+	color:#555;
+}
+
+h1.title {
+	font-size:0.7em;
+	
+}
+
+h2 {
+  font-size: large;
+}
+
+h3 {
+  font-size: medium;
+}
+
+h4 {
+  font-size: small;
+}
+
+form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+
+pre, code {
+  color: #007000;
+  font-family: "bogus font here", monospace;
+  font-size: 100%;
+}
+
+pre {
+  border: 1px solid silver;
+  background-color: #f5f5f5;
+  padding: 0.5em;
+  overflow: auto;
+  margin: 2em;
+}
+
+pre ins {
+  color: #cc0000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* "Selected" links */
+
+a.selected, .selected a, .selected {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.selected:visited, .selected a:visited {
+  color: black;
+}
+
+p.videoDescription {
+  font-size: 0.7em;
+  margin: 0;
+  padding: 0;
+}
+
+#myytplayer {
+	position:relative;
+	top:-14.6em;
+	float:right;
+	right:1.2em;
+}
+
+.videoList td {
+  padding-bottom: 5px; 
+  padding-right: 5px; 
+}
+#titleBar {
+	-moz-border-radius:8px;
+	
+	background-color:#444444;
+ background: #fff url(http://www.marineemporiumlanding.com/images/Film%20strip%20with%20pics%20copy.jpg) no-repeat;
+/*	filter:alpha(opacity=90);
+	-moz-opacity:.90;
+	opacity:.90; 
+	position:fixed;
+	
+	*/
+	border:4px solid #555;
+	color:#555;
+	font-weight:bold;
+	height:160px;
+	margin:5px 0.7em 16px 153px;
+	padding:5px 10px 10px;
+}
+
+#titleText {
+  float: left;
+}
+
+#searchBox {
+}
+
+#mainSearchBox {
+  background-color: #fff;
+  border: 1px solid #111;
+  width: 250;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+#searchResults {
+	background-color:#FFFFFF;
+	border:4px solid #666;
+	-moz-border-radius:8px;
+	font-size:large;
+	font-weight:bold;
+	margin-left:8.5em;
+	padding-bottom:2em;
+	padding-right:2em;
+	padding-top:2em;
+	position:absolute;
+	top:10.7em;
+	margin-right:1em;
+}
+
+#searchResultsListColumn {
+	float: left;
+	padding:0.5em;
+	background-color:white;
+	margin-top:0.4em;
+	padding-top:0em;
+	top:-2em;
+	width:90%;
+	position:relative;
+	}
+
+#searchResultsVideoColumn {
+	float: right;
+	background-color:white;
+	overflow:auto;
+}
+	
+.playlistColumn {
+	float: left;
+	background:url(strip.png);
+	border:1px solid #111;
+	width: 122px;
+	position:relative;
+	background-color: #222;
+  	padding-top: 0px;
+  	padding-bottom: 5px;
+  	padding-left: 10px;
+  	padding-right: 10px;
+}
+
+body {
+  font-family: verdana, helvetica;
+}
+
+#timedisplay {
+  border: solid 1px red;
+  width: 50px;
+}
+	
+	
+	#sortable { list-style-type: none; margin: 0; padding: 0;  }
+	#sortable li { margin: 3px 3px 3px 0; padding: 1px; width: 100px; height: 90px; color:#fff;  text-align: center; 
+		cursor:move;
+		background:#111;
+		}
+
+	#ui-sortable {background-color:red;}
+	
+	#emptyPlaylist {
+		font-size:0.3em;
+	}
+	
+	#sortable li {
+		float:left;
+		font-size:4em;
+		height:67px;
+		margin:3px 3px 3px 0;
+		padding:5px 20px 5px 0;
+		border:0px;
+		text-align:center;
+		width:100px;
+	}
+	
+	 .helper {
+		background-color:red;
+		border:2px dashed #red;
+		color:#333;
+	}
+	
+	
+.playlistDelete {
+	left:1.1em;
+	position:relative;
+	top:-2.5em;
+}
+
+.playlistPlay {
+	left:1.1em;
+	position:relative;
+	top:-0.6em;
+}
+
+#resultsNumberSlider { 
+	width:100px;
+	margin: 10px;
+	 }
+	
+.settings {
+	color:#333;
+	border:1px solid #999;
+	margin:0.4em;
+	padding:0.4em;
+	font-size:0.5em;
+}
+
+#settingsButton {
+	text-align:center;
+	background:#333 url(http://www.htd.holmesglen.vic.edu.au/review/ecs_final/content/resources/images/res_nav_gradient3.jpg);
+}
+
+#settingsButton:hover {
+	cursor:pointer;
+	z-index:10;
+}
+#settings {
+	background:#eee;
+	display:none;
+}
+
+.videoList {
+	margin:0.3em;
+}
+
+.channelButton, #storeArea > div {
+	background-color:#eee;
+	padding:0.2em 0.6em;
+	margin:1em;
+	line-height:2.5em;
+	min-height:33px;
+	border:1px solid #666;
+	color:#444;
+	background:transparent url(gradient.png) repeat scroll 0 0;
+	-moz-border-radius:3px;
+}
+
+
+#channels {
+	background:url(http://www.productoftheyear.co.uk/images/tv.jpg) no-repeat;
+	width:114%;
+}
+
+.channelsCol {
+	float:left;
+	text-align:center;
+	min-width:30%;
+}
+
+
+
+div.channelButton:Hover {
+	background:url(gradient_hover.png) repeat scroll 0 0;
+	cursor:pointer;
+	border:1px solid #444;
+}
+
+div.channelButton:link {
+	background:red;
+	cursor:pointer;
+}
+
+.loadingImg {
+	display:none;
+}
+
+.playlistItemInfo {
+	border:1px solid #555;
+	background-color:#111;
+	position:relative;
+	left:120px;
+	top:-160px;
+	z-index:222;
+	font-size:0.4em;
+	color:#ddd;
+	min-width:400px;
+	padding:1em;
+	text-align:left;
+	opacity:0.9;filter:alpha(opacity=90);
+	-moz-border-radius:3px;
+}
+
+.playlistItemInfo h4 {
+	padding-top:0em;
+	margin-top:0em;
+	font-size:1em;
+}
+
+#footer {
+	font-size:0.5em;
+}
+
+
+.playlistPlaceholder {
+background-color:black;
+position:absolute;
+width:128px;
+z-index:22;
+left:20px;
+}
+
+#header  h2  {
+	color:white;
+	left:-4em;
+	position:absolute;
+}
+
+#videoDiv {
+	background:#423E35 none repeat scroll 0 0;
+	height:300px;
+	padding:1em;
+	position:fixed;
+	right:-1em;
+	top:1em;
+	width:268px;
+}

@@ -9,9 +9,9 @@ from tiddlyweb.model.bag import Bag
 from tiddlyweb.web.util import encode_name
 
  
-EXTENSION_TYPES = { 'hi': 'text/html' }
+EXTENSION_TYPES = { 'playlist': 'text/html' }
 SERIALIZERS = {
-        'text/html': ['hi', 'text/html; charset=UTF-8']
+        'text/html': ['playlist', 'text/html; charset=UTF-8']
         }
  
 DEFAULT_TITLE = 'S5 Title'

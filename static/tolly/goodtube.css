@@ -345,3 +345,28 @@ div.channelButton:link {
 #footer {
 	font-size:0.5em;
 }
+
+
+.playlistPlaceholder {
+background-color:black;
+position:absolute;
+width:128px;
+z-index:22;
+left:20px;
+}
+
+#header  h2  {
+	color:white;
+	left:-4em;
+	position:absolute;
+}
+
+#videoDiv {
+	background:#423E35 none repeat scroll 0 0;
+	height:300px;
+	padding:1em;
+	position:fixed;
+	right:-1em;
+	top:1em;
+	width:268px;
+}

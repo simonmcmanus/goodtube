@@ -9,9 +9,9 @@ from tiddlyweb.model.bag import Bag
 from tiddlyweb.web.util import encode_name
 
  
-EXTENSION_TYPES = { 'hi': 'text/html' }
+EXTENSION_TYPES = { 'playlist': 'text/html' }
 SERIALIZERS = {
-        'text/html': ['hi', 'text/html; charset=UTF-8']
+        'text/html': ['playlist', 'text/html; charset=UTF-8']
         }
  
 DEFAULT_TITLE = 'S5 Title'
@@ -30,7 +30,7 @@ class Serialization(SerializationInterface):
  
     def _init(self):
         template_env = Environment(loader=FileSystemLoader('templates'))
-        self.template = template_env.get_template('playlist.html')
+        self.template = template_env.get_template('newTheme.html')
  
     def list_bags(self, bags):
         """

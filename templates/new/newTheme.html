@@ -1,0 +1,108 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="/static/tolly/tolly.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/static/tolly/ggtheme.css" type="text/css" media="screen" />
+
+	<script type="text/javascript" src="/static/tolly/jquery/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="/static/tolly/jquery/ui.core.js"></script>
+
+	<script type="text/javascript" src="/static/tolly/jquery/ui.sortable.js"></script>
+	<script type="text/javascript" src="http://jqueryui.com/latest/ui/ui.slider.js"></script>
+	<script type="text/javascript" src="/static/tolly/jgrowl/jquery.jgrowl.js"></script>
+	<script type="text/javascript" src="/static/tolly/jquery/cookiePlugin.js"></script>
+	<script type="text/javascript" src="/static/tolly/tiddlyweb.js"></script>
+	<script type="text/javascript" src="/static/tolly/jquery/JSON.js"></script>
+
+	<script type="text/javascript" src="/static/tolly/utubeInclude.js"></script>
+
+	<script type="text/javascript" src="/static/tolly/min_utube_include.js"></script>
+	
+	<script type="text/javascript" src="/static/tolly/tolly_init.js"></script>
+	<script type="text/javascript" src="/static/tolly/tolly_default_init.js"></script>
+</head>
+
+<body id="home">
+	<div class='playlistPlaceholder'>
+		<div class="playlistColumn">
+			<div class="strip" id="pastPlaylist">
+			&nbsp;
+			</div>
+			<a onclick="viewPlayed();" href="#"> <img src="up-arrow.png"/> </a>
+			<div class="strip">
+			<ul id="sortable" class="ui-sortable" unselectable="on" style="-moz-user-select: none;">
+				<li><div id="emptyPlaylist"> Playlist is empty</div> </li>
+
+					{% for name in slides %}
+					 
+
+					<li id="li_3" class="ui-state-default"><img width="90" src="http://i.ytimg.com/vi/{{ slides[name].fields.id }}/2.jpg" class="playlistItem" id="{{ slides[name].fields.id }}"/><a href="#" class="playlistPlay" onclick="playlistPlay('{{ slides[name].fields.id }}');"><img height="20" src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png"/></a><br/><a href="#" class="playlistDelete" alt="remove video from playlist" onclick="playlistDelete(3)"><img height="20" src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png"/></a><div class="playlistItemInfo" id="more_info_c0IGn_BQdRE" style="display: none;"><h4>{{ slides[name].title }}</h4>
+					<p>
+					blah balh balhl
+					</p>
+					</div></li>
+
+
+					 
+					{% endfor %}
+			</ul>
+
+
+
+
+
+
+
+
+			</div>
+
+		</div>
+	</div>
+<div id="header_wrap">
+	<div id="header">	
+		<h2>tolly.tv</h2>
+<form>
+<input id='searchValue'>
+<input type='button' value='search' onclick='doSearch(); return true;' href='#'>
+</form>	
+
+			</div>
+
+
+<div id='videoDiv'>
+	<object height="164" width="255" type="application/x-shockwave-flash" id="character_large" allowfullscreen="true" data="http://www.youtube.com/v/ma9I9VBKPiw&amp;amp;border=0&amp;amp;enablejsapi=1&amp;amp;playerapiid=ytplayer&amp;amp;fs=1"><param name="allowScriptAccess" value="always"/><param name="bgcolor" value="#cccccc"/><param name="allowFullScreen" value="true"/><param name="wmode" value="transparent"/></object>
+</div>
+
+</div>
+<!-- [END] Header -->
+<!-- Content -->
+<div id="content_wrap">
+	<div id="content" class="clearfix">
+		<!-- Page -->
+		<div id="page" class="round_10">	
+								<div id='mainContent'>
+								<h2>Streams</h2>
+<noscript>
+This page requires javascript to function.
+</noscript>
+
+		<div class="post_inner_wrap clearfix">
+<div id='channels'>
+      <div id='channelsCol1' class='channelsCol'></div>
+      <div id='channelsCol2' class='channelsCol'></div>
+      <div id='channelsCol3' class='channelsCol'></div>
+      </div>
+						</div>
+					</div>
+		</div>
+		<!-- [END] Page -->
+	<br class="clear" />	
+	</div>
+</div>
+<!-- [END] Content -->
+
+<!-- Footer -->
+	<div id="footer">
+	</div>
+</body>
+</html>
