@@ -3,13 +3,10 @@ from jinja2 import Environment, FileSystemLoader
 from tiddlyweb.web import util as web
 
 def homepage(environ, start_response):
-#	fin = open("templates/newTheme.html", "r")
-#	htmlStr = fin.read()
-#	fin.close()
-	
-        template_env = Environment(loader=FileSystemLoader('templates/new'))
-        return template_env.get_template('newTheme.html');
-#	return _generate_response(htmlStr, environ, start_response);
+	fin = open("templates/new/newTheme.html", "r")
+	htmlStr = fin.read()
+	fin.close()
+	return _generate_response(htmlStr, environ, start_response);
 
 
 def _generate_response(content, environ, start_response):

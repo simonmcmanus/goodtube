@@ -218,14 +218,15 @@ body {
 	}
 	
 	#sortable li {
-		float:left;
-		font-size:4em;
-		height:67px;
-		margin:3px 3px 3px 0;
-		padding:5px 20px 5px 0;
-		border:0px;
-		text-align:center;
-		width:100px;
+	background:#000000 none repeat scroll 0 0;
+	border:0 none;
+	float:left;
+	font-size:4em;
+	height:67px;
+	margin:3px;
+	padding:5px 20px 5px 0;
+	text-align:center;
+	width:96px;
 	}
 	
 	 .helper {

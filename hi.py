@@ -29,7 +29,7 @@ class Serialization(SerializationInterface):
         self._init()
  
     def _init(self):
-        template_env = Environment(loader=FileSystemLoader('templates'))
+        template_env = Environment(loader=FileSystemLoader('templates/new'))
         self.template = template_env.get_template('newTheme.html')
  
     def list_bags(self, bags):

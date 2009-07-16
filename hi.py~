@@ -30,7 +30,7 @@ class Serialization(SerializationInterface):
  
     def _init(self):
         template_env = Environment(loader=FileSystemLoader('templates'))
-        self.template = template_env.get_template('playlist.html')
+        self.template = template_env.get_template('newTheme.html')
  
     def list_bags(self, bags):
         """
