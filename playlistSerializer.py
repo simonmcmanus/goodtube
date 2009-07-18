@@ -14,12 +14,6 @@ SERIALIZERS = {
         'text/html': ['hi', 'text/html; charset=UTF-8']
         }
  
-DEFAULT_TITLE = 'S5 Title'
-DEFAULT_SUBTITLE = 'S5 Subtitle'
-DEFAULT_PRESENTER = 'S5 Presenter'
-DEFAULT_AFFILIATION = 'S5 Affiliation'
-DEFAULT_TIME_LOCATION = 'S5 Time Location'
- 
 class Serialization(SerializationInterface):
  
     def __init__(self, environ=None):

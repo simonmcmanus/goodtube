@@ -10,8 +10,6 @@ from tiddlyweb.model.bag import Bag
 from tiddlyweb.model.recipe import Recipe
 from tiddlyweb.web.sendtiddlers import send_tiddlers
 
-
-
 def user_page(environ, start_response): 
     print(environ)
     name = environ['wsgiorg.routing_args'][1].get('name', 'default')

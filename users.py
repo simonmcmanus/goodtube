@@ -1,9 +1,3 @@
-"""
-def homepage(environ, start_response):
-	return "Holla"
-A quick plugin to demonstrate creating
-recipes on the fly.
-"""
 
 from tiddlyweb import control
 from tiddlyweb.model.bag import Bag

@@ -1,0 +1,93 @@
+
+#myytplayer {
+	position:relative;
+	top:-0em;
+	float:right;
+	right:1.2em;
+}
+
+<!-- playlist -->
+.playlistColumn {
+	float: left;
+	background:url(strip.png);
+	border:1px solid #111;
+	width: 122px;
+	position:relative;
+	background-color: #222;
+  	padding-top: 0px;
+  	padding-bottom: 5px;
+  	padding-left: 10px;
+  	padding-right: 10px;
+}
+
+	#sortable { list-style-type: none; margin: 0; padding: 0;  }
+	#sortable li {
+		background:#000000 none repeat scroll 0 0;
+		border:0 none;
+		float:left;
+		font-size:4em;
+		height:67px;
+		margin:3px;
+		padding:5px 20px 5px 0;
+		text-align:center;
+		width:96px;
+	}
+
+	#ui-sortable {background-color:red;}
+	
+	#emptyPlaylist {
+		font-size:0.3em;
+	}
+	
+	#sortable li {
+		float:left;
+		font-size:4em;
+		height:67px;
+		margin:3px 3px 3px 0;
+		padding:5px 20px 5px 0;
+		border:0px;
+		text-align:center;
+		width:100px;
+	}
+	
+	 .helper {
+		background-color:red;
+		border:2px dashed #red;
+		color:#333;
+	}
+	
+	
+.playlistDelete {
+	left:1.1em;
+	position:relative;
+	top:-2.5em;
+}
+
+.playlistPlay {
+	left:1.1em;
+	position:relative;
+	top:-0.6em;
+}
+
+.playlistItemInfo {
+	border:1px solid #555;
+	background-color:#111;
+	position:relative;
+	left:120px;
+	top:-160px;
+	z-index:222;
+	font-size:0.4em;
+	color:#ddd;
+	min-width:400px;
+	padding:1em;
+	text-align:left;
+	opacity:0.9;filter:alpha(opacity=90);
+	-moz-border-radius:3px;
+}
+
+.playlistItemInfo h4 {
+	padding-top:0em;
+	margin-top:0em;
+	font-size:1em;
+}
+
