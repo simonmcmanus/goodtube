@@ -1,3 +1,7 @@
+body {
+	background:#ede;
+}
+
 
 #myytplayer {
 	position:relative;
@@ -6,10 +10,11 @@
 	right:1.2em;
 }
 
-<!-- playlist -->
+
+
 .playlistColumn {
 	float: left;
-	background:url(strip.png);
+	background:url(../tolly/strip.png);
 	border:1px solid #111;
 	width: 122px;
 	position:relative;
@@ -58,15 +63,16 @@
 	
 	
 .playlistDelete {
-	left:1.1em;
+	border:0 none;
+	left:0.9em;
 	position:relative;
-	top:-2.5em;
+	top:-2.9em;
 }
 
 .playlistPlay {
-	left:1.1em;
+	left:0.9em;
 	position:relative;
-	top:-0.6em;
+	top:-1.2em;
 }
 
 .playlistItemInfo {

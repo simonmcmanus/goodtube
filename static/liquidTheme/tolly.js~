@@ -19,11 +19,19 @@ function searchResultsCallback(data) {
 
 function searchItemHtml(item) {
 	var html = [];
-	html.push('<h3>'+item.title+'</h3>');
-	html.push('<img src="'+item.thumb+'"/>');	
-	html.push('<a href="'+item.id+'">link</a>');
-	html.push('<a onClick="playlistAdd({ id : \''+item.id+'\', title: \''+item.title+'\' })" href="#">add to playlist</a>');
-	html.push(item.content);
+	html.push('<table><tr><td><img src="'+item.thumb+'"/></td>');	
+	html.push('<td><h3>'+item.title+'</h3></td></tr>');
+	html.push('<tr><td>');
+	
+
+html.push('<a onClick="playlistAdd({ id : \''+item.id+'\', title: \''+item.title+'\',  content: \''+item.content+'\', thumb: \''+item.thumb+'\', link: \''+item.link+'\' })" href="#">add to playlist</a><br/>');
+
+	html.push('<a onClick="findFrags(\''+item.id+'\')" href="#">add this and others </a>');
+
+
+	html.push('</td>');
+	html.push('<td>'+item.content+'</td></tr></table><hr/>');
+
 	return html.join('\n');
 }
 
@@ -341,8 +349,119 @@ var appendScriptTag = function(scriptSrc, scriptId, scriptCallback) {
 
 var playlistAdd = function(item) {
 	// check if required fields have been set
-	console.log(item);
+	tolly.playlist[tolly.playlist.length] = item;	
+	updatePlaylist();
 }
 
 
+function playlistNext() {
+	if(window.jpPast == undefined)
+		window.jpPast = [];
+	loadNewVideo(window.jp[0].id);
+	$("#sortable > #"+0).fadeOut("fast");
+	window.jp.shift();
+	jpPast[window.jp[0].id] = window.jp[0];
+	jpPast.push(window.jp[0]);
+	updatePlaylist();
+//$("#sortable > #"+0).prependTo('#pastPlaylist')
+	
+}
+
+function updatePlaylist() {
+	document.getElementById("sortable").innerHTML = playlistPresent(tolly.playlist);		
+	setMouseOver();
+	document.getElementById("pastPlaylist").innerHTML = playlistPresent(window.jpPast);		
+}
+
+function playlistDelete(position) {
+	window.jp.splice(position, 1);
+	$("#sortable > #li_"+position).fadeOut("slow");	
+}
+
+function playlistPlay(id) {
+	window.playRequest = true;
+	ytplayer.loadVideoById(id, 0);
+}
+
+function setMouseOver() {	
+	$(".ui-state-default").mouseover(function() {
+		$("#more_info_"+this.firstChild.id).show();
+	});
+	$(".ui-state-default").mouseout(function() {
+		$("#more_info_"+this.firstChild.id).hide();
+	});
+
+}
+
+function playlistPresent(p) {
+	if(p!=undefined) {
+		var items = p;
+		var html = [];
+		for(i = 0; i < items.length; i++){
+			if(items[i]!=="" && items[i]!==undefined) {
+				var img = "http://i.ytimg.com/vi/"+items[i].id+"/2.jpg";
+				html.push('<li id="li_'+i+'" class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i].id+'" width="90"/>');
+				html.push('<a href="#" class="playlistPlay"  onclick="playlistPlay(\''+items[i].id+'\');">');
+				html.push('<img src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png" height="20px"</a><br />');
+				html.push('<a href="#" class="playlistDelete" alt="remove video from playlist" onclick="playlistDelete('+i+')"><img src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png" height="20px">');
+				html.push('</a><div class="playlistItemInfo" id="more_info_'+items[i].id+'" style="display:none"><h4>'+items[i].title+"</h4><p>"+items[i].desc+'</p></div></li>');
+			}
+		}
+		return html.join("");		
+	}	
+}
+
+function getPlaylist(name) {
+	$.get("playlists/"+name+".txt", function(data) {
+		var items = eval("{"+data+"}");
+		for(i = 0; i < items.length; i++){
+			playlistAdd(items[i].id);
+		}
+	});
+}
+
+
+function findFrags(id) {
+    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/"+id+"/related?a=1", 
+      'showVideosByUserfScript', 
+      'findOtherFragmentsCallback');
+}
+
+
+/*
+
+when viewing replated items the title of the original item is provided in the format : 
+Videos related to ' TITLE HERE '
+This function is used to extract the title
+*/
+function removeRelatedText(string) {
+	var s = string.replace("Videos related to '", "");
+	s.substring(0, s.length-1);
+	return s;
+}	
+
+function stripFirstBracket(string) {
+	return string.substring(0, string.indexOf('Part'));
+}
+
+function findOtherFragmentsCallback(data) {
+	var currentTitle =  removeRelatedText(data.feed.title.$t);
+	var fragTitles = [];
+	var titleIDLookUp = {};
+	for (var i= 0, entry; entry = data.feed.entry[i]; i++) {
+		if(stripFirstBracket(entry.title.$t) == stripFirstBracket(currentTitle)) {
+			fragTitles[fragTitles.length++] = entry.title.$t;
+			titleIDLookUp[entry.title.$t] = entry.id.$t;
+		}		
+	}
+	fragTitles = fragTitles.sort();
+console.log("b is", titleIDLookUp);
+	for(var c = 0; fragTitles.length > c; c++){
+		playlistAdd({id:parseURI(titleIDLookUp[fragTitles[c]]),title: fragTitles[c]});
+
+	}
+
+
+
+}
 

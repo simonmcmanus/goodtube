@@ -5,7 +5,7 @@
 	margin-left:148px;
 }
 #outer_wrapper {
-	background: #fff url(background_3.gif) repeat-y left;
+	background: transparent;
 }
 #wrapper {
 	background: url(background_2.gif) repeat-y right;
@@ -22,7 +22,12 @@
 	background: url(background_3.gif) repeat-y left;
 }
 #main {
-	margin-left: 150px;
+	border:1px solid #ddd;
+	padding:1em;
+	margin:1em;
+	background:#fff;	
+	margin-left:150px;
+-moz-border-radius:15px;
 }
 #left {
 	float:left;
