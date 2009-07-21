@@ -1,7 +1,23 @@
-parseURI = function(uri) {
-	temp = uri.split('/');
-	return temp[temp.length-1];
+
+
+
+function searchItemHtml(item) {
+	var html = [];
+	html.push('<table><tr><td><img src="'+item.thumb+'"/><br/>');	
+	html.push('<a onClick="playlistAdd({ id : \''+item.id+'\', title: \''+item.title+'\',  content: \''+item.content+'\', thumb: \''+item.thumb+'\', link: \''+item.link+'\' })" href="#">add to playlist</a><br/>');
+	html.push('<a onClick="findFrags(\''+item.id+'\')" href="#">add this and others </a>');
+	html.push('</td><td valign="top">');
+
+	html.push('<h3>'+item.title+'</h3>'+item.content);
+	html.push('</td></tr></table><hr/>');
+
+	return html.join('\n');
 }
+
+function doSearch(e) {
+	appendScriptTag('http://gdata.youtube.com/feeds/videos?max-results=10&start-index=1&vq='+document.getElementById('searchValue').value, 'searchResults', 'searchResultsCallback');
+}
+
 
 
 function searchResultsCallback(data) {
@@ -15,28 +31,6 @@ function searchResultsCallback(data) {
 			content: data.feed.entry[item].media$group.media$description.$t
 		});
   document.getElementById(tolly.CONTENT_DIV).innerHTML = html;	
-}
-
-function searchItemHtml(item) {
-	var html = [];
-	html.push('<table><tr><td><img src="'+item.thumb+'"/></td>');	
-	html.push('<td><h3>'+item.title+'</h3></td></tr>');
-	html.push('<tr><td>');
-	
-
-html.push('<a onClick="playlistAdd({ id : \''+item.id+'\', title: \''+item.title+'\',  content: \''+item.content+'\', thumb: \''+item.thumb+'\', link: \''+item.link+'\' })" href="#">add to playlist</a><br/>');
-
-	html.push('<a onClick="findFrags(\''+item.id+'\')" href="#">add this and others </a>');
-
-
-	html.push('</td>');
-	html.push('<td>'+item.content+'</td></tr></table><hr/>');
-
-	return html.join('\n');
-}
-
-function doSearch(e) {
-	appendScriptTag('http://gdata.youtube.com/feeds/videos?max-results=10&start-index=1&vq='+document.getElementById('searchValue').value, 'searchResults', 'searchResultsCallback');
 }
 
 // NOT REVIEWED
@@ -150,71 +144,6 @@ parseURI = function(uri) {
 	return temp[temp.length-1];
 }
 
-function playlistNext() {
-	if(window.jpPast == undefined)
-		window.jpPast = [];
-	loadNewVideo(window.jp[0].id);
-	$("#sortable > #"+0).fadeOut("fast");
-	window.jp.shift();
-	jpPast[window.jp[0].id] = window.jp[0];
-	jpPast.push(window.jp[0]);
-	updatePlaylist();
-//$("#sortable > #"+0).prependTo('#pastPlaylist')
-	
-}
-
-function updatePlaylist() {
-	document.getElementById("sortable").innerHTML = playlistPresent(window.jp);		
-	setMouseOver();
-//	document.getElementById("pastPlaylist").innerHTML = playlistPresent(window.jpPast);		
-}
-
-function playlistDelete(position) {
-	window.jp.splice(position, 1);
-	$("#sortable > #li_"+position).fadeOut("slow");	
-}
-
-function playlistPlay(id) {
-	window.playRequest = true;
-	ytplayer.loadVideoById(id, 0);
-}
-
-function setMouseOver() {	
-	$(".ui-state-default").mouseover(function() {
-		$("#more_info_"+this.firstChild.id).show();
-	});
-	$(".ui-state-default").mouseout(function() {
-		$("#more_info_"+this.firstChild.id).hide();
-	});
-
-}
-
-function playlistPresent(p) {
-	if(p!=undefined) {
-		var items = p;
-		var html = [];
-		for(i = 0; i < items.length; i++){
-			if(items[i]!=="" && items[i]!==undefined) {
-				var img = "http://i.ytimg.com/vi/"+items[i].id+"/2.jpg";
-				html.push('<li id="li_'+i+'" class="ui-state-default"><img src="'+img+'" class="playlistItem" id="'+items[i].id+'" width="90"/>');
-				html.push('<a href="#" class="playlistPlay"  onclick="playlistPlay(\''+items[i].id+'\');">');
-				html.push('<img src="http://i250.photobucket.com/albums/gg259/usedguitarsonline/Play_Icon_by_AI74.png" height="20px"</a><br />');
-				html.push('<a href="#" class="playlistDelete" alt="remove video from playlist" onclick="playlistDelete('+i+')"><img src="http://dryicons.com/images/icon_sets/simplistica/png/128x128/delete.png" height="20px">');
-				html.push('</a><div class="playlistItemInfo" id="more_info_'+items[i].id+'" style="display:none"><h4>'+items[i].title+"</h4><p>"+items[i].desc+'</p></div></li>');
-			}
-		}
-		return html.join("");		
-	}	
-}
-
-function getPlaylist(name) {
-	$.get("playlists/"+name+".txt", function(data) {
-		var items = eval("{"+data+"}");
-		for(i = 0; i < items.length; i++){
-			playlistAdd(items[i].id);
-		}
-	});
-}
 
 function playlistAdd(item) {
 	var id = "";
@@ -230,9 +159,9 @@ function playlistAdd(item) {
 		return false;		
 	}
 	if(ytplayer.getPlayerState()==1 || ytplayer.getPlayerState()==0 || ytplayer.getPlayerState()==3 || ytplayer.getPlayerState() ==5) {
-		if(window.jp == undefined)
-			window.jp = [];	
-		window.jp[jp.length] = item;
+		if(tolly.playlist == undefined)
+			tolly.playlist = [];	
+		tolly.playlist[jp.length] = item;
 		updatePlaylist();		
 	}else{
 		loadNewVideo(id);
@@ -264,7 +193,7 @@ function settingsClick() {
 
 
 function playChannel(feed) {
-	window.jp = [];
+	tolly.playlist = [];
 	window.showResults = false;
 	window.autoQ = true;
 	ytvb.MAX_RESULTS_LIST = 50;
@@ -288,8 +217,8 @@ function listChannels() {
 }
 
 function viewPlayed() {
-	window.jp.unshift(window.jpPast[0]);
-	window.jpPast.shift();
+	tolly.playlist.unshift(tolly.playlistPast[0]);
+	tolly.playlist.shift();
 	updatePlaylist();
 };
 
@@ -464,4 +393,5 @@ console.log("b is", titleIDLookUp);
 
 
 }
+
 

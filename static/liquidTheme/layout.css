@@ -1,8 +1,9 @@
 #header {
-	background:#D7DABD none repeat scroll 0 0;
-	border:1px solid #CECEA5;
+	color:white;
+	background:#C5C0B0 none repeat scroll 0 0;
+	border:1px solid #ACA592;
 	font-size:1.4em;
-	margin-left:148px;
+	padding-left:200px;
 }
 #outer_wrapper {
 	background: transparent;
@@ -26,7 +27,7 @@
 	padding:1em;
 	margin:1em;
 	background:#fff;	
-	margin-left:150px;
+	margin-left:200px;
 -moz-border-radius:15px;
 }
 #left {
@@ -43,7 +44,8 @@
 }
 #footer {
 	border: 1px solid #cecea5;
-	background: #d7dabd;
+	background: #C5C0B0 none repeat scroll 0 0
+	position: relative;
 }
 h1 {
 	margin-top: 0;
