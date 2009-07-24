@@ -1,3 +1,5 @@
+var tolly = {};
+tolly.videos = {};
 
 $(function() {
     $("#sortable").sortable({
@@ -17,7 +19,7 @@ $(function() {
   $(document).ready(function(){
    window.tollyPP = [];
   // window.tollyPP = $.cookie('tollyPlaylistInfo');  
-       $.jGrowl.defaults.closer = false;
+      $.jGrowl.defaults.closer = false;
     window.autoQ = false;
     document.getElementById(ytvb.MAIN_SEARCH_CONTAINER_DIV).style.display = 'none';
     document.getElementById(ytvb.TOP_SEARCH_CONTAINER_DIV).style.display = 'inline';

@@ -2,16 +2,31 @@
 
 
 function searchItemHtml(item) {
+console.log('item is ', item);
 	var html = [];
 	html.push('<table><tr><td><img src="'+item.thumb+'"/><br/>');	
 	html.push('<a onClick="playlistAdd({ id : \''+item.id+'\', title: \''+item.title+'\',  content: \''+item.content+'\', thumb: \''+item.thumb+'\', link: \''+item.link+'\' })" href="#">add to playlist</a><br/>');
-	html.push('<a onClick="findFrags(\''+item.id+'\')" href="#">add this and others </a>');
+	html.push('<a onClick="findFrags(\''+item.id+'\', \'addFragmentsCallback\')" href="#">add this and others </a>');
+	html.push('<div id="'+item.id+'_frags"> stuff here </div>');
 	html.push('</td><td valign="top">');
-
+	findFrags(item.id, 'listFragsCallback');
 	html.push('<h3>'+item.title+'</h3>'+item.content);
 	html.push('</td></tr></table><hr/>');
 
 	return html.join('\n');
+}
+
+function listFragsCallback(data) {
+	html = [];
+	fragTitles = extractFragments(data);
+	tolly.videos[parseRelatedURI(data.feed.id.$t)] = fragTitles;
+
+
+	for(var c = 0; fragTitles.length > c; c++){
+		html.push("<div>"+fragTitles[c]+"</div><hr/>");			
+	}
+	var selector = "#"+parseRelatedURI(data.feed.id.$t)+"_frags";
+	$(selector).html(html.join("\n"));
 }
 
 function doSearch(e) {
@@ -139,6 +154,10 @@ function loadNewVideo(id, startSeconds) {
 
 /*  PLAYLIST FUNCTIONS */
 
+parseRelatedURI = function(uri) {
+	temp = uri.split('/');
+	return temp[temp.length-2];
+}
 parseURI = function(uri) {
 	temp = uri.split('/');
 	return temp[temp.length-1];
@@ -350,10 +369,10 @@ function getPlaylist(name) {
 }
 
 
-function findFrags(id) {
-    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/"+id+"/related?a=1", 
+function findFrags(id, callback) {
+    ytvb.appendScriptTag("http://gdata.youtube.com/feeds/api/videos/"+id+"/related?max=25", 
       'showVideosByUserfScript', 
-      'findOtherFragmentsCallback');
+      callback);
 }
 
 
@@ -370,28 +389,32 @@ function removeRelatedText(string) {
 }	
 
 function stripFirstBracket(string) {
-	return string.substring(0, string.indexOf('Part'));
+	return string.substring(0, string.indexOf('('));
 }
 
-function findOtherFragmentsCallback(data) {
+function stripFirstPart(string) {
+	return string.substring(0, string.indexOf('('));
+}
+
+
+function extractFragments(data) {
 	var currentTitle =  removeRelatedText(data.feed.title.$t);
 	var fragTitles = [];
 	var titleIDLookUp = {};
 	for (var i= 0, entry; entry = data.feed.entry[i]; i++) {
-		if(stripFirstBracket(entry.title.$t) == stripFirstBracket(currentTitle)) {
+		if(stripFirstPart(entry.title.$t) == stripFirstPart(currentTitle)) {
 			fragTitles[fragTitles.length++] = entry.title.$t;
 			titleIDLookUp[entry.title.$t] = entry.id.$t;
 		}		
 	}
-	fragTitles = fragTitles.sort();
-console.log("b is", titleIDLookUp);
+	return fragTitles.sort();
+}
+
+function addFragmentsCallback(data) {
+	fragTitles = extractFragments(data);
 	for(var c = 0; fragTitles.length > c; c++){
 		playlistAdd({id:parseURI(titleIDLookUp[fragTitles[c]]),title: fragTitles[c]});
 
 	}
-
-
-
 }
-
 

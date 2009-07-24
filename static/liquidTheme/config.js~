@@ -9,3 +9,5 @@ tolly.PLAYING_STATUS_DIV = 'playingStatus';
 
 
 tolly.playlist = [];
+tolly.videos = [];
+
